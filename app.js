@@ -112,7 +112,237 @@ map.addEventListener('keydown', (e) => {
   }
 });
 
-// ---- selectCity stub (filled in Task 9) ----
-function selectCity(id, origin) {
-  // Task 9 renders the drill-down panel here.
+// ---- drill-down panel ----
+const panel = $('#panel');
+const backdrop = $('#panel-backdrop');
+let lastFocused = null;
+const isMobile = () => window.matchMedia('(max-width:720px)').matches;
+
+// Featured event = the firsthand one if present, else most recent.
+const featuredEvent = (c) => c.events.find(e => e.source === 'firsthand') ?? c.events[0];
+
+// One phrase per health factor, using real numbers where the data has them.
+function factorPhrase(key, c) {
+  const evs = c.events;
+  if (key === 'cadence') {
+    const n = evs.filter(e => { const d = daysBetween(NOW, e.date); return d >= 0 && d <= 90; }).length;
+    return n === 0 ? 'no events in the last 90 days' : `${n} event${n > 1 ? 's' : ''} in 90 days`;
+  }
+  if (key === 'trend') {
+    const a = evs.slice(0, 3).map(e => e.attended);
+    if (a.length < 2 || a[0] === a[a.length - 1]) return 'attendance steady';
+    return a[0] > a[a.length - 1] ? 'attendance rising' : 'attendance slipping';
+  }
+  if (key === 'recency') {
+    const wk = Math.floor(daysBetween(NOW, evs[0].date) / 7);
+    if (wk <= 1) return 'host active this week';
+    if (wk <= 3) return 'host active recently';
+    return `host quiet ${wk} weeks`;
+  }
+  if (key === 'funnel') {
+    const f = featuredEvent(c);
+    if (f?.funnel && f.attended) return `activation at ${Math.round((f.funnel.activated_w1 / f.attended) * 100)}%`;
+    return 'activation not yet measured';
+  }
+  return '';
 }
+
+function explainer(c) {
+  const entries = Object.entries(c.health.factors).sort((a, b) => b[1] - a[1]);
+  const top = entries[0][0], bottom = entries[entries.length - 1][0];
+  return `<strong>${STATE_WORD[c.health.state]}</strong> — ${factorPhrase(top, c)}, ${factorPhrase(bottom, c)}.`;
+}
+
+const cap = (s) => s ? s[0].toUpperCase() + s.slice(1) : s;
+function ambassadorRow(c) {
+  return c.ambassador?.name
+    ? `<p class="p-ambassador">${c.ambassador.name}</p>`
+    : `<p class="p-ambassador muted">${cap(c.ambassador?.note) || 'Host not yet mapped'}</p>`;
+}
+
+function nextEventBlock(c) {
+  const ne = c.next_event;
+  if (!ne) return `<div class="p-next muted"><p class="ne-name">No upcoming session scheduled</p></div>`;
+  const rsvp = typeof ne.rsvps === 'number' && ne.rsvps > 0 ? ` · ${ne.rsvps} RSVPs` : '';
+  const link = ne.url ? ` <a class="ne-link" href="${ne.url}" target="_blank" rel="noopener">↗</a>` : '';
+  return `<div class="p-next">
+    <p class="ne-name">${ne.name}${link}</p>
+    <p class="ne-meta">${fmtDate(ne.date)}${rsvp}</p>
+  </div>`;
+}
+
+function mediaBlock(c, f) {
+  if (!('media' in f)) return '';
+  if (!f.media.length) return `<p class="ev-nomedia">No media synced</p>`;
+  const imgs = f.media.slice(0, 3).map((src, i) =>
+    `<img src="${src}" loading="lazy" alt="${f.name} — photo ${i + 1}">`).join('');
+  return `<div class="ev-media">${imgs}</div>
+    <p class="ev-credit">Photos: Shashank Jha — ${f.name}</p>`;
+}
+
+function lastEventCard(c) {
+  const f = featuredEvent(c);
+  const eyebrow = f.source === 'firsthand' ? 'Firsthand' : 'Latest event';
+  const venue = f.venue ? ` · ${f.venue}` : '';
+  return `<div class="p-event">
+    <p class="ev-eyebrow">${eyebrow}</p>
+    <p class="ev-name">${f.name}</p>
+    <p class="ev-meta">${fmtDateY(f.date)}${venue}</p>
+    <p class="ev-stat"><b>${f.attended}</b> / ${f.rsvps} attended</p>
+    ${mediaBlock(c, f)}
+  </div>`;
+}
+
+const FUNNEL_ROWS = [
+  ['RSVP’d', 'rsvps'],
+  ['Attended', 'attended'],
+  ['Used redirect', 'redirect_used'],
+  ['New signup', 'signed_up'],
+  ['Activated wk 1', 'activated_w1'],
+  ['Active wk 4', 'active_w4'],
+];
+
+function funnelBlock(c) {
+  const f = featuredEvent(c);
+  if (!f.funnel || !f.rsvps) {
+    return `<p class="fn-empty">No attribution data — no instrumented links at this event yet.</p>`;
+  }
+  const total = f.rsvps;
+  const val = (k) => k === 'rsvps' ? f.rsvps : k === 'attended' ? f.attended : f.funnel[k];
+  const rows = FUNNEL_ROWS.map(([label, key]) => {
+    const v = val(key);
+    const pct = Math.max((v / total) * 100, 2);
+    return `<div class="fn-row"><div class="fn-bar" style="width:${pct.toFixed(1)}%"></div>
+      <span class="fn-label">${label}</span><span class="fn-count">${v}</span></div>`;
+  }).join('');
+  const u = f.funnel.unattributed;
+  const upct = Math.max((u / total) * 100, 2);
+  return `<div class="funnel">${rows}
+    <div class="fn-row hatch"><div class="fn-bar" style="width:${upct.toFixed(1)}%"></div>
+      <span class="fn-label">Unattributed</span><span class="fn-count">${u}</span></div>
+  </div>
+  <p class="fn-note">attended but never used an event link — the gap attribution infrastructure closes</p>`;
+}
+
+function historyBlock(c) {
+  const f = featuredEvent(c);
+  const rows = c.events.filter(e => e !== f).slice(0, 4).map(e =>
+    `<div class="hist-row"><span class="hist-date">${fmtDate(e.date)}</span>
+      <span class="hist-name">${e.name}</span><span class="hist-att">${e.attended}</span></div>`).join('');
+  if (!rows) return '';
+  return `<div class="p-section"><p class="label">Event history</p>
+    <div class="p-history">${rows}</div></div>`;
+}
+
+function panelHTML(c) {
+  return `
+  <div class="p-head">
+    <div class="p-title">
+      <h3>${c.name}</h3>
+      <p class="p-country">${c.country}</p>
+    </div>
+    <button class="p-close" aria-label="Close panel">×</button>
+  </div>
+  <span class="p-badge"><i style="background:${hColor(c.health.state)}"></i>${STATE_WORD[c.health.state]}</span>
+  <p class="p-explain">${explainer(c)}</p>
+
+  <div class="p-section">
+    <p class="label">Ambassador</p>
+    ${ambassadorRow(c)}
+  </div>
+
+  <div class="p-section">
+    <p class="label">Next event</p>
+    ${nextEventBlock(c)}
+  </div>
+
+  <div class="p-section">
+    <p class="label">Featured event</p>
+    ${lastEventCard(c)}
+  </div>
+
+  <div class="p-section">
+    <p class="label">Attribution funnel</p>
+    ${funnelBlock(c)}
+  </div>
+
+  ${historyBlock(c)}`;
+}
+
+let closeTimer = null;
+function selectCity(id, origin) {
+  const c = cityById.get(id);
+  if (!c) return;
+  lastFocused = origin ?? null;
+  clearTimeout(closeTimer);
+  hideTip();
+  $$('.city.active').forEach(d => d.classList.remove('active'));
+  $(`.city[data-id="${id}"]`)?.classList.add('active');
+
+  panel.innerHTML = panelHTML(c);
+  panel.hidden = false;
+  backdrop.hidden = false;
+  panel.setAttribute('tabindex', '-1');
+  void panel.offsetWidth; // reflow so the transform transition runs
+  panel.classList.add('open');
+  backdrop.classList.add('open');
+  panel.focus();
+
+  $('.p-close', panel).addEventListener('click', closePanel);
+}
+
+function closePanel() {
+  if (panel.hidden) return;
+  panel.classList.remove('open');
+  backdrop.classList.remove('open');
+  $$('.city.active').forEach(d => d.classList.remove('active'));
+  const done = () => { panel.hidden = true; backdrop.hidden = true; };
+  closeTimer = setTimeout(done, 220);
+  const origin = lastFocused;
+  lastFocused = null;
+  if (origin) origin.focus();
+}
+
+backdrop.addEventListener('click', closePanel);
+
+// mobile swipe-down to dismiss
+let dragStart = null;
+panel.addEventListener('pointerdown', (e) => {
+  if (!isMobile() || panel.scrollTop > 0) return;
+  dragStart = e.clientY;
+  panel.classList.add('dragging');
+});
+panel.addEventListener('pointermove', (e) => {
+  if (dragStart == null) return;
+  const dy = e.clientY - dragStart;
+  if (dy > 0) panel.style.transform = `translateY(${dy}px)`;
+});
+function endDrag(e) {
+  if (dragStart == null) return;
+  const dy = e.clientY - dragStart;
+  panel.style.transform = '';
+  panel.classList.remove('dragging');
+  dragStart = null;
+  if (dy > 60) closePanel();
+}
+panel.addEventListener('pointerup', endDrag);
+panel.addEventListener('pointercancel', endDrag);
+
+// ---- formula popover ----
+const fbtn = $('#formula-btn');
+const pop = $('#formula-popover');
+function setPopover(open) {
+  pop.hidden = !open;
+  fbtn.setAttribute('aria-expanded', String(open));
+}
+fbtn.addEventListener('click', (e) => { e.stopPropagation(); setPopover(pop.hidden); });
+document.addEventListener('click', (e) => {
+  if (!pop.hidden && !pop.contains(e.target) && e.target !== fbtn) setPopover(false);
+});
+
+// ---- global keys ----
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  if (!panel.hidden) closePanel();
+  else if (!pop.hidden) setPopover(false);
+});
