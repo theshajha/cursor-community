@@ -6,8 +6,13 @@
       "country": "Thailand",
       "lat": 13.7563,
       "lng": 100.5018,
-      "luma_city_match": ["Bangkok"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Bangkok"
+      ],
+      "ambassador": {
+        "name": "Luis Romero & Tibor",
+        "note": "hosts, Cursor Thailand"
+      },
       "members": 420,
       "host_last_active": "2026-07-02",
       "baseline_60d": 2,
@@ -33,8 +38,18 @@
           "status": "past",
           "rsvps": 160,
           "attended": 129,
-          "funnel": { "redirect_used": 74, "signed_up": 41, "activated_w1": 28, "active_w4": 19, "unattributed": 55 },
-          "media": ["assets/photos/bangkok/01.jpg", "assets/photos/bangkok/02.jpg", "assets/photos/bangkok/03.jpg"],
+          "funnel": {
+            "redirect_used": 74,
+            "signed_up": 41,
+            "activated_w1": 28,
+            "active_w4": 19,
+            "unattributed": 55
+          },
+          "media": [
+            "assets/photos/bangkok/01.jpg",
+            "assets/photos/bangkok/02.jpg",
+            "assets/photos/bangkok/03.jpg"
+          ],
           "source": "firsthand",
           "url": "https://cursorthailand.com/cursor-sunday-29032026"
         },
@@ -44,7 +59,13 @@
           "status": "past",
           "rsvps": 120,
           "attended": 95,
-          "funnel": { "redirect_used": 49, "signed_up": 27, "activated_w1": 18, "active_w4": 12, "unattributed": 46 }
+          "funnel": {
+            "redirect_used": 49,
+            "signed_up": 27,
+            "activated_w1": 18,
+            "active_w4": 12,
+            "unattributed": 46
+          }
         },
         {
           "name": "Cursor Thailand Ship Party",
@@ -52,7 +73,13 @@
           "status": "past",
           "rsvps": 135,
           "attended": 110,
-          "funnel": { "redirect_used": 60, "signed_up": 33, "activated_w1": 23, "active_w4": 15, "unattributed": 50 }
+          "funnel": {
+            "redirect_used": 60,
+            "signed_up": 33,
+            "activated_w1": 23,
+            "active_w4": 15,
+            "unattributed": 50
+          }
         },
         {
           "name": "Cursor Thailand Community Night",
@@ -60,7 +87,13 @@
           "status": "past",
           "rsvps": 145,
           "attended": 118,
-          "funnel": { "redirect_used": 67, "signed_up": 38, "activated_w1": 27, "active_w4": 18, "unattributed": 51 }
+          "funnel": {
+            "redirect_used": 67,
+            "signed_up": 38,
+            "activated_w1": 27,
+            "active_w4": 18,
+            "unattributed": 51
+          }
         }
       ]
     },
@@ -70,8 +103,13 @@
       "country": "United Arab Emirates",
       "lat": 25.2048,
       "lng": 55.2708,
-      "luma_city_match": ["Dubai"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Dubai"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 60,
       "host_last_active": "2026-06-25",
       "baseline_60d": 1,
@@ -82,7 +120,13 @@
           "status": "past",
           "rsvps": 60,
           "attended": 45,
-          "funnel": { "redirect_used": 22, "signed_up": 12, "activated_w1": 8, "active_w4": 5, "unattributed": 23 },
+          "funnel": {
+            "redirect_used": 22,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 23
+          },
           "source": "firsthand"
         },
         {
@@ -99,8 +143,13 @@
       "country": "United Kingdom",
       "lat": 51.5074,
       "lng": -0.1278,
-      "luma_city_match": ["London"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "London"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 380,
       "host_last_active": "2026-07-07",
       "baseline_60d": 2,
@@ -125,7 +174,13 @@
           "status": "past",
           "rsvps": 100,
           "attended": 85,
-          "funnel": { "redirect_used": 43, "signed_up": 24, "activated_w1": 16, "active_w4": 10, "unattributed": 42 }
+          "funnel": {
+            "redirect_used": 43,
+            "signed_up": 24,
+            "activated_w1": 16,
+            "active_w4": 10,
+            "unattributed": 42
+          }
         },
         {
           "name": "Cursor iOS Hackathon London",
@@ -133,7 +188,13 @@
           "status": "past",
           "rsvps": 115,
           "attended": 96,
-          "funnel": { "redirect_used": 53, "signed_up": 29, "activated_w1": 20, "active_w4": 13, "unattributed": 43 }
+          "funnel": {
+            "redirect_used": 53,
+            "signed_up": 29,
+            "activated_w1": 20,
+            "active_w4": 13,
+            "unattributed": 43
+          }
         }
       ]
     },
@@ -141,10 +202,15 @@
       "id": "berlin",
       "name": "Berlin",
       "country": "Germany",
-      "lat": 52.5200,
-      "lng": 13.4050,
-      "luma_city_match": ["Berlin"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "lat": 52.52,
+      "lng": 13.405,
+      "luma_city_match": [
+        "Berlin"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 260,
       "host_last_active": "2026-06-30",
       "baseline_60d": 2,
@@ -169,7 +235,13 @@
           "status": "past",
           "rsvps": 72,
           "attended": 58,
-          "funnel": { "redirect_used": 29, "signed_up": 16, "activated_w1": 11, "active_w4": 7, "unattributed": 29 }
+          "funnel": {
+            "redirect_used": 29,
+            "signed_up": 16,
+            "activated_w1": 11,
+            "active_w4": 7,
+            "unattributed": 29
+          }
         }
       ]
     },
@@ -177,10 +249,15 @@
       "id": "tallinn",
       "name": "Tallinn",
       "country": "Estonia",
-      "lat": 59.4370,
+      "lat": 59.437,
       "lng": 24.7536,
-      "luma_city_match": ["Tallinn"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Tallinn"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 90,
       "host_last_active": "2026-06-14",
       "baseline_60d": 2,
@@ -205,7 +282,13 @@
           "status": "past",
           "rsvps": 35,
           "attended": 22,
-          "funnel": { "redirect_used": 10, "signed_up": 5, "activated_w1": 3, "active_w4": 2, "unattributed": 12 }
+          "funnel": {
+            "redirect_used": 10,
+            "signed_up": 5,
+            "activated_w1": 3,
+            "active_w4": 2,
+            "unattributed": 12
+          }
         }
       ]
     },
@@ -215,8 +298,13 @@
       "country": "Finland",
       "lat": 60.1699,
       "lng": 24.9384,
-      "luma_city_match": ["Helsinki"],
-      "ambassador": { "name": "Mari Luukkainen", "note": "Cursor Mini Summer Hackathon Helsinki host, public on Luma" },
+      "luma_city_match": [
+        "Helsinki"
+      ],
+      "ambassador": {
+        "name": "Mari Luukkainen",
+        "note": "Cursor Mini Summer Hackathon Helsinki host, public on Luma"
+      },
       "members": 130,
       "host_last_active": "2026-07-06",
       "baseline_60d": 2,
@@ -241,7 +329,13 @@
           "status": "past",
           "rsvps": 50,
           "attended": 40,
-          "funnel": { "redirect_used": 20, "signed_up": 12, "activated_w1": 8, "active_w4": 5, "unattributed": 20 }
+          "funnel": {
+            "redirect_used": 20,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 20
+          }
         }
       ]
     },
@@ -251,8 +345,13 @@
       "country": "Brazil",
       "lat": -22.9068,
       "lng": -43.1729,
-      "luma_city_match": ["Rio de Janeiro"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Rio de Janeiro"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 310,
       "host_last_active": "2026-07-03",
       "baseline_60d": 2,
@@ -277,7 +376,13 @@
           "status": "past",
           "rsvps": 82,
           "attended": 68,
-          "funnel": { "redirect_used": 35, "signed_up": 19, "activated_w1": 13, "active_w4": 8, "unattributed": 33 }
+          "funnel": {
+            "redirect_used": 35,
+            "signed_up": 19,
+            "activated_w1": 13,
+            "active_w4": 8,
+            "unattributed": 33
+          }
         },
         {
           "name": "Cursor Meetup Rio de Janeiro",
@@ -285,7 +390,13 @@
           "status": "past",
           "rsvps": 95,
           "attended": 79,
-          "funnel": { "redirect_used": 43, "signed_up": 24, "activated_w1": 17, "active_w4": 11, "unattributed": 36 }
+          "funnel": {
+            "redirect_used": 43,
+            "signed_up": 24,
+            "activated_w1": 17,
+            "active_w4": 11,
+            "unattributed": 36
+          }
         }
       ]
     },
@@ -295,8 +406,13 @@
       "country": "Brazil",
       "lat": -10.9472,
       "lng": -37.0731,
-      "luma_city_match": ["Aracaju"],
-      "ambassador": { "name": "Hugo Doria", "note": "Cursor Aracaju host, public on Luma" },
+      "luma_city_match": [
+        "Aracaju"
+      ],
+      "ambassador": {
+        "name": "Hugo Doria",
+        "note": "Cursor Aracaju host, public on Luma"
+      },
       "members": 150,
       "host_last_active": "2026-07-05",
       "baseline_60d": 2,
@@ -321,7 +437,13 @@
           "status": "past",
           "rsvps": 62,
           "attended": 50,
-          "funnel": { "redirect_used": 27, "signed_up": 15, "activated_w1": 10, "active_w4": 6, "unattributed": 23 }
+          "funnel": {
+            "redirect_used": 27,
+            "signed_up": 15,
+            "activated_w1": 10,
+            "active_w4": 6,
+            "unattributed": 23
+          }
         }
       ]
     },
@@ -331,8 +453,13 @@
       "country": "United States",
       "lat": 25.7617,
       "lng": -80.1918,
-      "luma_city_match": ["Miami"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Miami"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 190,
       "host_last_active": "2026-07-01",
       "baseline_60d": 2,
@@ -357,7 +484,13 @@
           "status": "past",
           "rsvps": 52,
           "attended": 41,
-          "funnel": { "redirect_used": 21, "signed_up": 12, "activated_w1": 8, "active_w4": 5, "unattributed": 20 }
+          "funnel": {
+            "redirect_used": 21,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 20
+          }
         }
       ]
     },
@@ -367,8 +500,13 @@
       "country": "Germany",
       "lat": 50.1109,
       "lng": 8.6821,
-      "luma_city_match": ["Frankfurt"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Frankfurt"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 120,
       "host_last_active": "2026-06-10",
       "baseline_60d": 2,
@@ -393,7 +531,13 @@
           "status": "past",
           "rsvps": 58,
           "attended": 45,
-          "funnel": { "redirect_used": 23, "signed_up": 12, "activated_w1": 8, "active_w4": 5, "unattributed": 22 }
+          "funnel": {
+            "redirect_used": 23,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 22
+          }
         }
       ]
     },
@@ -403,8 +547,13 @@
       "country": "Egypt",
       "lat": 30.0444,
       "lng": 31.2357,
-      "luma_city_match": ["Cairo"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Cairo"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 160,
       "host_last_active": "2026-07-02",
       "baseline_60d": 2,
@@ -429,7 +578,13 @@
           "status": "past",
           "rsvps": 78,
           "attended": 63,
-          "funnel": { "redirect_used": 33, "signed_up": 18, "activated_w1": 12, "active_w4": 8, "unattributed": 30 }
+          "funnel": {
+            "redirect_used": 33,
+            "signed_up": 18,
+            "activated_w1": 12,
+            "active_w4": 8,
+            "unattributed": 30
+          }
         }
       ]
     },
@@ -439,8 +594,13 @@
       "country": "Uganda",
       "lat": 0.3476,
       "lng": 32.5825,
-      "luma_city_match": ["Kampala"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Kampala"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 110,
       "host_last_active": "2026-06-29",
       "baseline_60d": 2,
@@ -465,7 +625,13 @@
           "status": "past",
           "rsvps": 56,
           "attended": 44,
-          "funnel": { "redirect_used": 22, "signed_up": 12, "activated_w1": 8, "active_w4": 5, "unattributed": 22 }
+          "funnel": {
+            "redirect_used": 22,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 22
+          }
         }
       ]
     },
@@ -475,8 +641,13 @@
       "country": "Colombia",
       "lat": 10.9639,
       "lng": -74.7964,
-      "luma_city_match": ["Barranquilla"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Barranquilla"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 80,
       "host_last_active": "2026-06-08",
       "baseline_60d": 2,
@@ -501,7 +672,13 @@
           "status": "past",
           "rsvps": 28,
           "attended": 18,
-          "funnel": { "redirect_used": 9, "signed_up": 5, "activated_w1": 3, "active_w4": 2, "unattributed": 9 }
+          "funnel": {
+            "redirect_used": 9,
+            "signed_up": 5,
+            "activated_w1": 3,
+            "active_w4": 2,
+            "unattributed": 9
+          }
         }
       ]
     },
@@ -511,8 +688,14 @@
       "country": "Guatemala",
       "lat": 14.6349,
       "lng": -90.5069,
-      "luma_city_match": ["Guatemala City", "Ciudad de Guatemala"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Guatemala City",
+        "Ciudad de Guatemala"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 95,
       "host_last_active": "2026-06-25",
       "baseline_60d": 2,
@@ -537,7 +720,13 @@
           "status": "past",
           "rsvps": 55,
           "attended": 42,
-          "funnel": { "redirect_used": 22, "signed_up": 12, "activated_w1": 8, "active_w4": 5, "unattributed": 20 }
+          "funnel": {
+            "redirect_used": 22,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 20
+          }
         }
       ]
     },
@@ -547,8 +736,13 @@
       "country": "United States",
       "lat": 39.9526,
       "lng": -75.1652,
-      "luma_city_match": ["Philadelphia"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Philadelphia"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 85,
       "host_last_active": "2026-06-10",
       "baseline_60d": 2,
@@ -573,7 +767,13 @@
           "status": "past",
           "rsvps": 30,
           "attended": 19,
-          "funnel": { "redirect_used": 9, "signed_up": 5, "activated_w1": 3, "active_w4": 2, "unattributed": 10 }
+          "funnel": {
+            "redirect_used": 9,
+            "signed_up": 5,
+            "activated_w1": 3,
+            "active_w4": 2,
+            "unattributed": 10
+          }
         }
       ]
     },
@@ -583,8 +783,14 @@
       "country": "India",
       "lat": 12.9716,
       "lng": 77.5946,
-      "luma_city_match": ["Bangalore", "Bengaluru"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Bangalore",
+        "Bengaluru"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 350,
       "host_last_active": "2026-07-05",
       "baseline_60d": 2,
@@ -609,7 +815,13 @@
           "status": "past",
           "rsvps": 90,
           "attended": 88,
-          "funnel": { "redirect_used": 42, "signed_up": 22, "activated_w1": 14, "active_w4": 9, "unattributed": 46 }
+          "funnel": {
+            "redirect_used": 42,
+            "signed_up": 22,
+            "activated_w1": 14,
+            "active_w4": 9,
+            "unattributed": 46
+          }
         },
         {
           "name": "Cafe Cursor Bangalore",
@@ -617,7 +829,13 @@
           "status": "past",
           "rsvps": 96,
           "attended": 95,
-          "funnel": { "redirect_used": 45, "signed_up": 24, "activated_w1": 16, "active_w4": 10, "unattributed": 50 }
+          "funnel": {
+            "redirect_used": 45,
+            "signed_up": 24,
+            "activated_w1": 16,
+            "active_w4": 10,
+            "unattributed": 50
+          }
         }
       ]
     },
@@ -627,8 +845,13 @@
       "country": "United States",
       "lat": 37.7749,
       "lng": -122.4194,
-      "luma_city_match": ["San Francisco"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "San Francisco"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 240,
       "host_last_active": "2026-05-05",
       "baseline_60d": 2,
@@ -653,7 +876,13 @@
           "status": "past",
           "rsvps": 41,
           "attended": 30,
-          "funnel": { "redirect_used": 15, "signed_up": 8, "activated_w1": 5, "active_w4": 3, "unattributed": 15 }
+          "funnel": {
+            "redirect_used": 15,
+            "signed_up": 8,
+            "activated_w1": 5,
+            "active_w4": 3,
+            "unattributed": 15
+          }
         }
       ]
     },
@@ -663,8 +892,14 @@
       "country": "United States",
       "lat": 33.9802,
       "lng": -118.4517,
-      "luma_city_match": ["Los Angeles", "Marina del Rey"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Los Angeles",
+        "Marina del Rey"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 100,
       "host_last_active": "2026-06-28",
       "baseline_60d": 2,
@@ -689,7 +924,13 @@
           "status": "past",
           "rsvps": 48,
           "attended": 38,
-          "funnel": { "redirect_used": 19, "signed_up": 10, "activated_w1": 6, "active_w4": 4, "unattributed": 19 }
+          "funnel": {
+            "redirect_used": 19,
+            "signed_up": 10,
+            "activated_w1": 6,
+            "active_w4": 4,
+            "unattributed": 19
+          }
         }
       ]
     },
@@ -699,8 +940,13 @@
       "country": "Italy",
       "lat": 43.7696,
       "lng": 11.2558,
-      "luma_city_match": ["Florence"],
-      "ambassador": { "name": null, "note": "host not yet mapped" },
+      "luma_city_match": [
+        "Florence"
+      ],
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
       "members": 60,
       "host_last_active": "2026-04-20",
       "baseline_60d": 2,
@@ -718,7 +964,13 @@
           "status": "past",
           "rsvps": 14,
           "attended": 10,
-          "funnel": { "redirect_used": 5, "signed_up": 3, "activated_w1": 2, "active_w4": 1, "unattributed": 5 }
+          "funnel": {
+            "redirect_used": 5,
+            "signed_up": 3,
+            "activated_w1": 2,
+            "active_w4": 1,
+            "unattributed": 5
+          }
         }
       ]
     }
