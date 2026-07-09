@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/",
+    "test": "node --test 'tests/**/*.test.mjs'",
     "map": "node scripts/gen-map.mjs",
     "fetch": "node scripts/fetch-luma.mjs",
     "derive": "node scripts/derive.mjs",
