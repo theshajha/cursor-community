@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T04:25:06.258Z",
+  "generated_at": "2026-07-09T04:34:53.541Z",
   "week_of": "2026-07-06",
   "formula": "health = 0.35·cadence + 0.25·trend + 0.20·recency + 0.20·funnel\ncadence  events last 60d vs the city’s own trailing baseline\ntrend    slope of the last 3 events’ attendance\nrecency  days since the host was last active (60d floor)\nfunnel   attended → activated-week-1, most recent measured event\nthriving ≥ .75 · steady ≥ .50 · cooling ≥ .30 · quiet < .30",
   "kpis": {
@@ -7,45 +7,45 @@
       "value": 19,
       "delta": 2,
       "spark": [
-        2,
-        3,
-        5,
-        3,
-        2,
-        3,
         1,
+        3,
+        4,
+        2,
+        2,
+        4,
+        3,
         2,
         4,
         6,
-        3,
+        2,
         0
       ]
     },
     "events_30d": {
-      "value": 14,
-      "delta": 5,
+      "value": 13,
+      "delta": 1,
       "spark": [
-        2,
-        3,
-        5,
-        3,
-        2,
-        3,
         1,
+        3,
+        4,
+        2,
+        2,
+        4,
+        3,
         2,
         4,
         6,
-        3,
+        2,
         0
       ]
     },
     "activation_rate_30d": {
       "value": 0.2,
-      "delta": 0.01,
+      "delta": 0.02,
       "spark": [
         0.19,
-        0.14,
-        0.16,
+        0.17,
+        0,
         0,
         0.21,
         0.19,
@@ -58,20 +58,20 @@
       ]
     },
     "new_builders_30d": {
-      "value": 249,
-      "delta": 136,
+      "value": 234,
+      "delta": 106,
       "spark": [
-        32,
-        5,
-        5,
+        27,
+        8,
+        0,
         0,
         33,
-        46,
-        22,
+        51,
+        32,
         24,
         80,
         94,
-        63,
+        48,
         0
       ]
     }
@@ -174,12 +174,12 @@
       },
       "members": 60,
       "health": {
-        "score": 0.761,
-        "state": "thriving",
+        "score": 0.717,
+        "state": "steady",
         "factors": {
           "cadence": 1,
           "trend": 0.5,
-          "recency": 0.98,
+          "recency": 0.77,
           "funnel": 0.44
         }
       },
@@ -348,12 +348,12 @@
       },
       "members": 90,
       "health": {
-        "score": 0.182,
-        "state": "quiet",
+        "score": 0.397,
+        "state": "cooling",
         "factors": {
-          "cadence": 0,
+          "cadence": 0.5,
           "trend": 0.15,
-          "recency": 0.38,
+          "recency": 0.58,
           "funnel": 0.34
         }
       },
@@ -366,7 +366,7 @@
       "events": [
         {
           "name": "Cursor Tallinn Meetup",
-          "date": "2026-04-26",
+          "date": "2026-05-30",
           "status": "past",
           "rsvps": 35,
           "attended": 22,
@@ -652,12 +652,12 @@
       },
       "members": 120,
       "health": {
-        "score": 0.786,
-        "state": "thriving",
+        "score": 0.73,
+        "state": "steady",
         "factors": {
           "cadence": 1,
           "trend": 0.75,
-          "recency": 0.8,
+          "recency": 0.52,
           "funnel": 0.44
         }
       },
@@ -826,12 +826,12 @@
       },
       "members": 80,
       "health": {
-        "score": 0.198,
-        "state": "quiet",
+        "score": 0.403,
+        "state": "cooling",
         "factors": {
-          "cadence": 0,
+          "cadence": 0.5,
           "trend": 0.19,
-          "recency": 0.33,
+          "recency": 0.48,
           "funnel": 0.42
         }
       },
@@ -844,7 +844,7 @@
       "events": [
         {
           "name": "Cafe Cursor Barranquilla",
-          "date": "2026-04-23",
+          "date": "2026-05-26",
           "status": "past",
           "rsvps": 28,
           "attended": 18,
@@ -942,12 +942,12 @@
       },
       "members": 85,
       "health": {
-        "score": 0.31,
+        "score": 0.402,
         "state": "cooling",
         "factors": {
-          "cadence": 0,
+          "cadence": 0.5,
           "trend": 0.18,
-          "recency": 0.93,
+          "recency": 0.52,
           "funnel": 0.39
         }
       },
@@ -960,7 +960,7 @@
       "events": [
         {
           "name": "Cafe Cursor Philadelphia",
-          "date": "2026-05-06",
+          "date": "2026-06-03",
           "status": "past",
           "rsvps": 30,
           "attended": 19,
@@ -1067,44 +1067,44 @@
       },
       "members": 240,
       "health": {
-        "score": 0.672,
-        "state": "steady",
+        "score": 0.129,
+        "state": "quiet",
         "factors": {
-          "cadence": 0.5,
-          "trend": 0.87,
-          "recency": 0.92,
-          "funnel": 0.48
+          "cadence": 0,
+          "trend": 0.18,
+          "recency": 0,
+          "funnel": 0.42
         }
       },
       "next_event": null,
       "events": [
         {
           "name": "Cafe Cursor San Francisco",
-          "date": "2026-06-26",
+          "date": "2026-04-25",
           "status": "past",
-          "rsvps": 64,
-          "attended": 52,
+          "rsvps": 41,
+          "attended": 30,
           "funnel": {
-            "redirect_used": 27,
-            "signed_up": 15,
-            "activated_w1": 10,
-            "active_w4": 6,
-            "unattributed": 25
+            "redirect_used": 15,
+            "signed_up": 8,
+            "activated_w1": 5,
+            "active_w4": 3,
+            "unattributed": 15
           }
         },
         {
           "name": "Cursor SF Build Night",
-          "date": "2026-05-09",
-          "status": "past",
-          "rsvps": 55,
-          "attended": 44
-        },
-        {
-          "name": "Cafe Cursor San Francisco",
           "date": "2026-03-14",
           "status": "past",
           "rsvps": 50,
           "attended": 38
+        },
+        {
+          "name": "Cafe Cursor San Francisco",
+          "date": "2026-01-24",
+          "status": "past",
+          "rsvps": 58,
+          "attended": 44
         }
       ]
     },

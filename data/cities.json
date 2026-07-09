@@ -73,7 +73,7 @@
       "luma_city_match": ["Dubai"],
       "ambassador": { "name": null, "note": "host not yet mapped" },
       "members": 60,
-      "host_last_active": "2026-07-08",
+      "host_last_active": "2026-06-25",
       "baseline_60d": 1,
       "events": [
         {
@@ -182,7 +182,7 @@
       "luma_city_match": ["Tallinn"],
       "ambassador": { "name": null, "note": "host not yet mapped" },
       "members": 90,
-      "host_last_active": "2026-06-02",
+      "host_last_active": "2026-06-14",
       "baseline_60d": 2,
       "events": [
         {
@@ -201,7 +201,7 @@
         },
         {
           "name": "Cursor Tallinn Meetup",
-          "date": "2026-04-26",
+          "date": "2026-05-30",
           "status": "past",
           "rsvps": 35,
           "attended": 22,
@@ -370,7 +370,7 @@
       "luma_city_match": ["Frankfurt"],
       "ambassador": { "name": null, "note": "host not yet mapped" },
       "members": 120,
-      "host_last_active": "2026-06-27",
+      "host_last_active": "2026-06-10",
       "baseline_60d": 2,
       "events": [
         {
@@ -478,7 +478,7 @@
       "luma_city_match": ["Barranquilla"],
       "ambassador": { "name": null, "note": "host not yet mapped" },
       "members": 80,
-      "host_last_active": "2026-05-30",
+      "host_last_active": "2026-06-08",
       "baseline_60d": 2,
       "events": [
         {
@@ -497,7 +497,7 @@
         },
         {
           "name": "Cafe Cursor Barranquilla",
-          "date": "2026-04-23",
+          "date": "2026-05-26",
           "status": "past",
           "rsvps": 28,
           "attended": 18,
@@ -550,7 +550,7 @@
       "luma_city_match": ["Philadelphia"],
       "ambassador": { "name": null, "note": "host not yet mapped" },
       "members": 85,
-      "host_last_active": "2026-07-05",
+      "host_last_active": "2026-06-10",
       "baseline_60d": 2,
       "events": [
         {
@@ -569,7 +569,7 @@
         },
         {
           "name": "Cafe Cursor Philadelphia",
-          "date": "2026-05-06",
+          "date": "2026-06-03",
           "status": "past",
           "rsvps": 30,
           "attended": 19,
@@ -630,30 +630,30 @@
       "luma_city_match": ["San Francisco"],
       "ambassador": { "name": null, "note": "host not yet mapped" },
       "members": 240,
-      "host_last_active": "2026-07-04",
+      "host_last_active": "2026-05-05",
       "baseline_60d": 2,
       "events": [
         {
           "name": "Cafe Cursor San Francisco",
+          "date": "2026-01-24",
+          "status": "past",
+          "rsvps": 58,
+          "attended": 44
+        },
+        {
+          "name": "Cursor SF Build Night",
           "date": "2026-03-14",
           "status": "past",
           "rsvps": 50,
           "attended": 38
         },
         {
-          "name": "Cursor SF Build Night",
-          "date": "2026-05-09",
-          "status": "past",
-          "rsvps": 55,
-          "attended": 44
-        },
-        {
           "name": "Cafe Cursor San Francisco",
-          "date": "2026-06-26",
+          "date": "2026-04-25",
           "status": "past",
-          "rsvps": 64,
-          "attended": 52,
-          "funnel": { "redirect_used": 27, "signed_up": 15, "activated_w1": 10, "active_w4": 6, "unattributed": 25 }
+          "rsvps": 41,
+          "attended": 30,
+          "funnel": { "redirect_used": 15, "signed_up": 8, "activated_w1": 5, "active_w4": 3, "unattributed": 15 }
         }
       ]
     },
