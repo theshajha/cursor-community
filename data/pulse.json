@@ -1,0 +1,1239 @@
+{
+  "generated_at": "2026-07-09T04:25:06.258Z",
+  "week_of": "2026-07-06",
+  "formula": "health = 0.35·cadence + 0.25·trend + 0.20·recency + 0.20·funnel\ncadence  events last 60d vs the city’s own trailing baseline\ntrend    slope of the last 3 events’ attendance\nrecency  days since the host was last active (60d floor)\nfunnel   attended → activated-week-1, most recent measured event\nthriving ≥ .75 · steady ≥ .50 · cooling ≥ .30 · quiet < .30",
+  "kpis": {
+    "active_programs": {
+      "value": 19,
+      "delta": 2,
+      "spark": [
+        2,
+        3,
+        5,
+        3,
+        2,
+        3,
+        1,
+        2,
+        4,
+        6,
+        3,
+        0
+      ]
+    },
+    "events_30d": {
+      "value": 14,
+      "delta": 5,
+      "spark": [
+        2,
+        3,
+        5,
+        3,
+        2,
+        3,
+        1,
+        2,
+        4,
+        6,
+        3,
+        0
+      ]
+    },
+    "activation_rate_30d": {
+      "value": 0.2,
+      "delta": 0.01,
+      "spark": [
+        0.19,
+        0.14,
+        0.16,
+        0,
+        0.21,
+        0.19,
+        0.16,
+        0.19,
+        0.21,
+        0.19,
+        0.19,
+        0
+      ]
+    },
+    "new_builders_30d": {
+      "value": 249,
+      "delta": 136,
+      "spark": [
+        32,
+        5,
+        5,
+        0,
+        33,
+        46,
+        22,
+        24,
+        80,
+        94,
+        63,
+        0
+      ]
+    }
+  },
+  "cities": [
+    {
+      "id": "bangkok",
+      "name": "Bangkok",
+      "country": "Thailand",
+      "lat": 13.7563,
+      "lng": 100.5018,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 420,
+      "health": {
+        "score": 0.827,
+        "state": "thriving",
+        "factors": {
+          "cadence": 1,
+          "trend": 0.74,
+          "recency": 0.88,
+          "funnel": 0.57
+        }
+      },
+      "next_event": null,
+      "events": [
+        {
+          "name": "Cursor Thailand Community Night",
+          "date": "2026-06-14",
+          "status": "past",
+          "rsvps": 145,
+          "attended": 118,
+          "funnel": {
+            "redirect_used": 67,
+            "signed_up": 38,
+            "activated_w1": 27,
+            "active_w4": 18,
+            "unattributed": 51
+          }
+        },
+        {
+          "name": "Cursor Thailand Ship Party",
+          "date": "2026-05-17",
+          "status": "past",
+          "rsvps": 135,
+          "attended": 110,
+          "funnel": {
+            "redirect_used": 60,
+            "signed_up": 33,
+            "activated_w1": 23,
+            "active_w4": 15,
+            "unattributed": 50
+          }
+        },
+        {
+          "name": "Cursor Thailand Demo Day",
+          "date": "2026-04-19",
+          "status": "past",
+          "rsvps": 120,
+          "attended": 95,
+          "funnel": {
+            "redirect_used": 49,
+            "signed_up": 27,
+            "activated_w1": 18,
+            "active_w4": 12,
+            "unattributed": 46
+          }
+        },
+        {
+          "name": "Cursor Sunday Bangkok",
+          "date": "2026-03-29",
+          "venue": "The Decaf",
+          "status": "past",
+          "rsvps": 160,
+          "attended": 129,
+          "funnel": {
+            "redirect_used": 74,
+            "signed_up": 41,
+            "activated_w1": 28,
+            "active_w4": 19,
+            "unattributed": 55
+          },
+          "media": [],
+          "source": "firsthand",
+          "url": "https://cursorthailand.com/cursor-sunday-29032026"
+        }
+      ]
+    },
+    {
+      "id": "dubai",
+      "name": "Dubai",
+      "country": "United Arab Emirates",
+      "lat": 25.2048,
+      "lng": 55.2708,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 60,
+      "health": {
+        "score": 0.761,
+        "state": "thriving",
+        "factors": {
+          "cadence": 1,
+          "trend": 0.5,
+          "recency": 0.98,
+          "funnel": 0.44
+        }
+      },
+      "next_event": {
+        "name": "Cursor Builders Night v1",
+        "date": "2026-07-28",
+        "url": null
+      },
+      "events": [
+        {
+          "name": "Cafe Cursor Dubai",
+          "date": "2026-06-18",
+          "status": "past",
+          "rsvps": 60,
+          "attended": 45,
+          "funnel": {
+            "redirect_used": 22,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 23
+          },
+          "source": "firsthand"
+        }
+      ]
+    },
+    {
+      "id": "london",
+      "name": "London",
+      "country": "United Kingdom",
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 380,
+      "health": {
+        "score": 0.856,
+        "state": "thriving",
+        "factors": {
+          "cadence": 1,
+          "trend": 0.83,
+          "recency": 0.97,
+          "funnel": 0.52
+        }
+      },
+      "next_event": {
+        "name": "Cursor iOS London Hackathon",
+        "date": "2026-07-09",
+        "rsvps": null,
+        "url": "https://luma.com/cursor-vh1p"
+      },
+      "events": [
+        {
+          "name": "Cursor iOS Hackathon London",
+          "date": "2026-06-25",
+          "status": "past",
+          "rsvps": 115,
+          "attended": 96,
+          "funnel": {
+            "redirect_used": 53,
+            "signed_up": 29,
+            "activated_w1": 20,
+            "active_w4": 13,
+            "unattributed": 43
+          }
+        },
+        {
+          "name": "Cafe Cursor London",
+          "date": "2026-05-28",
+          "status": "past",
+          "rsvps": 100,
+          "attended": 85,
+          "funnel": {
+            "redirect_used": 43,
+            "signed_up": 24,
+            "activated_w1": 16,
+            "active_w4": 10,
+            "unattributed": 42
+          }
+        },
+        {
+          "name": "Cursor London Meetup",
+          "date": "2026-04-09",
+          "status": "past",
+          "rsvps": 90,
+          "attended": 72
+        },
+        {
+          "name": "Cafe Cursor London",
+          "date": "2026-02-12",
+          "status": "past",
+          "rsvps": 70,
+          "attended": 58
+        }
+      ]
+    },
+    {
+      "id": "berlin",
+      "name": "Berlin",
+      "country": "Germany",
+      "lat": 52.52,
+      "lng": 13.405,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 260,
+      "health": {
+        "score": 0.637,
+        "state": "steady",
+        "factors": {
+          "cadence": 0.5,
+          "trend": 0.79,
+          "recency": 0.85,
+          "funnel": 0.47
+        }
+      },
+      "next_event": {
+        "name": "Cursor Hackathon Berlin @Bliq",
+        "date": "2026-07-16",
+        "rsvps": null,
+        "url": "https://luma.com/0jyksnjv"
+      },
+      "events": [
+        {
+          "name": "Cursor Hackathon Berlin",
+          "date": "2026-06-20",
+          "status": "past",
+          "rsvps": 72,
+          "attended": 58,
+          "funnel": {
+            "redirect_used": 29,
+            "signed_up": 16,
+            "activated_w1": 11,
+            "active_w4": 7,
+            "unattributed": 29
+          }
+        },
+        {
+          "name": "Cafe Cursor Berlin",
+          "date": "2026-05-03",
+          "status": "past",
+          "rsvps": 62,
+          "attended": 50
+        },
+        {
+          "name": "Cursor Berlin Meetup",
+          "date": "2026-03-01",
+          "status": "past",
+          "rsvps": 58,
+          "attended": 45
+        }
+      ]
+    },
+    {
+      "id": "tallinn",
+      "name": "Tallinn",
+      "country": "Estonia",
+      "lat": 59.437,
+      "lng": 24.7536,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 90,
+      "health": {
+        "score": 0.182,
+        "state": "quiet",
+        "factors": {
+          "cadence": 0,
+          "trend": 0.15,
+          "recency": 0.38,
+          "funnel": 0.34
+        }
+      },
+      "next_event": {
+        "name": "Cursor Hackathon Tallinn",
+        "date": "2026-07-16",
+        "rsvps": null,
+        "url": "https://luma.com/hqbqiqw0"
+      },
+      "events": [
+        {
+          "name": "Cursor Tallinn Meetup",
+          "date": "2026-04-26",
+          "status": "past",
+          "rsvps": 35,
+          "attended": 22,
+          "funnel": {
+            "redirect_used": 10,
+            "signed_up": 5,
+            "activated_w1": 3,
+            "active_w4": 2,
+            "unattributed": 12
+          }
+        },
+        {
+          "name": "Cafe Cursor Tallinn",
+          "date": "2026-03-29",
+          "status": "past",
+          "rsvps": 42,
+          "attended": 30
+        },
+        {
+          "name": "Cursor Hackathon Tallinn",
+          "date": "2026-02-22",
+          "status": "past",
+          "rsvps": 48,
+          "attended": 34
+        }
+      ]
+    },
+    {
+      "id": "helsinki",
+      "name": "Helsinki",
+      "country": "Finland",
+      "lat": 60.1699,
+      "lng": 24.9384,
+      "ambassador": {
+        "name": "Mari Luukkainen",
+        "note": "Cursor Mini Summer Hackathon Helsinki host, public on Luma"
+      },
+      "members": 130,
+      "health": {
+        "score": 0.673,
+        "state": "steady",
+        "factors": {
+          "cadence": 0.5,
+          "trend": 0.83,
+          "recency": 0.95,
+          "funnel": 0.5
+        }
+      },
+      "next_event": {
+        "name": "Cursor Mini Summer Hackathon Helsinki",
+        "date": "2026-07-15",
+        "rsvps": null,
+        "url": "https://luma.com/rvqgc8me"
+      },
+      "events": [
+        {
+          "name": "Cursor Helsinki Build Night",
+          "date": "2026-06-15",
+          "status": "past",
+          "rsvps": 50,
+          "attended": 40,
+          "funnel": {
+            "redirect_used": 20,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 20
+          }
+        },
+        {
+          "name": "Cursor Helsinki Meetup",
+          "date": "2026-05-04",
+          "status": "past",
+          "rsvps": 44,
+          "attended": 34
+        },
+        {
+          "name": "Cafe Cursor Helsinki",
+          "date": "2026-03-02",
+          "status": "past",
+          "rsvps": 40,
+          "attended": 30
+        }
+      ]
+    },
+    {
+      "id": "rio-de-janeiro",
+      "name": "Rio de Janeiro",
+      "country": "Brazil",
+      "lat": -22.9068,
+      "lng": -43.1729,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 310,
+      "health": {
+        "score": 0.872,
+        "state": "thriving",
+        "factors": {
+          "cadence": 1,
+          "trend": 0.94,
+          "recency": 0.9,
+          "funnel": 0.54
+        }
+      },
+      "next_event": {
+        "name": "Cursor Meetup Rio de Janeiro",
+        "date": "2026-07-11",
+        "rsvps": null,
+        "url": "https://luma.com/45jawdhf"
+      },
+      "events": [
+        {
+          "name": "Cursor Meetup Rio de Janeiro",
+          "date": "2026-06-27",
+          "status": "past",
+          "rsvps": 95,
+          "attended": 79,
+          "funnel": {
+            "redirect_used": 43,
+            "signed_up": 24,
+            "activated_w1": 17,
+            "active_w4": 11,
+            "unattributed": 36
+          }
+        },
+        {
+          "name": "Cursor Rio Build Night",
+          "date": "2026-05-23",
+          "status": "past",
+          "rsvps": 82,
+          "attended": 68,
+          "funnel": {
+            "redirect_used": 35,
+            "signed_up": 19,
+            "activated_w1": 13,
+            "active_w4": 8,
+            "unattributed": 33
+          }
+        },
+        {
+          "name": "Cafe Cursor Rio",
+          "date": "2026-04-11",
+          "status": "past",
+          "rsvps": 68,
+          "attended": 55
+        },
+        {
+          "name": "Cursor Meetup Rio de Janeiro",
+          "date": "2026-02-21",
+          "status": "past",
+          "rsvps": 52,
+          "attended": 40
+        }
+      ]
+    },
+    {
+      "id": "aracaju",
+      "name": "Aracaju",
+      "country": "Brazil",
+      "lat": -10.9472,
+      "lng": -37.0731,
+      "ambassador": {
+        "name": "Hugo Doria",
+        "note": "Cursor Aracaju host, public on Luma"
+      },
+      "members": 150,
+      "health": {
+        "score": 0.704,
+        "state": "steady",
+        "factors": {
+          "cadence": 0.5,
+          "trend": 0.97,
+          "recency": 0.93,
+          "funnel": 0.5
+        }
+      },
+      "next_event": {
+        "name": "Cursor Aracaju",
+        "date": "2026-07-11",
+        "rsvps": null,
+        "url": "https://luma.com/cursor-kviw"
+      },
+      "events": [
+        {
+          "name": "Cursor Aracaju",
+          "date": "2026-06-20",
+          "status": "past",
+          "rsvps": 62,
+          "attended": 50,
+          "funnel": {
+            "redirect_used": 27,
+            "signed_up": 15,
+            "activated_w1": 10,
+            "active_w4": 6,
+            "unattributed": 23
+          }
+        },
+        {
+          "name": "Cafe Cursor Aracaju",
+          "date": "2026-05-02",
+          "status": "past",
+          "rsvps": 52,
+          "attended": 42
+        },
+        {
+          "name": "Cursor Aracaju Meetup",
+          "date": "2026-03-07",
+          "status": "past",
+          "rsvps": 44,
+          "attended": 34
+        }
+      ]
+    },
+    {
+      "id": "miami",
+      "name": "Miami",
+      "country": "United States",
+      "lat": 25.7617,
+      "lng": -80.1918,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 190,
+      "health": {
+        "score": 0.838,
+        "state": "thriving",
+        "factors": {
+          "cadence": 1,
+          "trend": 0.87,
+          "recency": 0.87,
+          "funnel": 0.49
+        }
+      },
+      "next_event": {
+        "name": "Cursor Miami Build Day",
+        "date": "2026-07-12",
+        "rsvps": null,
+        "url": "https://luma.com/5nwptx5q"
+      },
+      "events": [
+        {
+          "name": "Cafe Cursor Miami",
+          "date": "2026-06-22",
+          "status": "past",
+          "rsvps": 52,
+          "attended": 41,
+          "funnel": {
+            "redirect_used": 21,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 20
+          }
+        },
+        {
+          "name": "Cursor Miami Build Day",
+          "date": "2026-05-15",
+          "status": "past",
+          "rsvps": 46,
+          "attended": 36
+        },
+        {
+          "name": "Cafe Cursor Miami",
+          "date": "2026-03-20",
+          "status": "past",
+          "rsvps": 40,
+          "attended": 30
+        }
+      ]
+    },
+    {
+      "id": "frankfurt",
+      "name": "Frankfurt",
+      "country": "Germany",
+      "lat": 50.1109,
+      "lng": 8.6821,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 120,
+      "health": {
+        "score": 0.786,
+        "state": "thriving",
+        "factors": {
+          "cadence": 1,
+          "trend": 0.75,
+          "recency": 0.8,
+          "funnel": 0.44
+        }
+      },
+      "next_event": {
+        "name": "Frankfurt Build Day X Cursor",
+        "date": "2026-07-10",
+        "rsvps": null,
+        "url": "https://luma.com/9rq3fpqr"
+      },
+      "events": [
+        {
+          "name": "Frankfurt Build Day X Cursor",
+          "date": "2026-06-24",
+          "status": "past",
+          "rsvps": 58,
+          "attended": 45,
+          "funnel": {
+            "redirect_used": 23,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 22
+          }
+        },
+        {
+          "name": "Cafe Cursor Frankfurt",
+          "date": "2026-05-13",
+          "status": "past",
+          "rsvps": 52,
+          "attended": 40
+        },
+        {
+          "name": "Frankfurt Build Day",
+          "date": "2026-03-25",
+          "status": "past",
+          "rsvps": 48,
+          "attended": 36
+        }
+      ]
+    },
+    {
+      "id": "cairo",
+      "name": "Cairo",
+      "country": "Egypt",
+      "lat": 30.0444,
+      "lng": 31.2357,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 160,
+      "health": {
+        "score": 0.65,
+        "state": "steady",
+        "factors": {
+          "cadence": 0.5,
+          "trend": 0.81,
+          "recency": 0.88,
+          "funnel": 0.48
+        }
+      },
+      "next_event": {
+        "name": "Cursor Cairo Build-a-thon",
+        "date": "2026-07-11",
+        "rsvps": null,
+        "url": "https://luma.com/cursor-x9yx"
+      },
+      "events": [
+        {
+          "name": "Cursor Cairo Build-a-thon",
+          "date": "2026-06-18",
+          "status": "past",
+          "rsvps": 78,
+          "attended": 63,
+          "funnel": {
+            "redirect_used": 33,
+            "signed_up": 18,
+            "activated_w1": 12,
+            "active_w4": 8,
+            "unattributed": 30
+          }
+        },
+        {
+          "name": "Cursor Cairo Meetup",
+          "date": "2026-05-07",
+          "status": "past",
+          "rsvps": 68,
+          "attended": 55
+        },
+        {
+          "name": "Cafe Cursor Cairo",
+          "date": "2026-03-12",
+          "status": "past",
+          "rsvps": 60,
+          "attended": 48
+        }
+      ]
+    },
+    {
+      "id": "kampala",
+      "name": "Kampala",
+      "country": "Uganda",
+      "lat": 0.3476,
+      "lng": 32.5825,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 110,
+      "health": {
+        "score": 0.651,
+        "state": "steady",
+        "factors": {
+          "cadence": 0.5,
+          "trend": 0.88,
+          "recency": 0.83,
+          "funnel": 0.45
+        }
+      },
+      "next_event": {
+        "name": "Cafe Cursor Kampala",
+        "date": "2026-07-11",
+        "rsvps": null,
+        "url": "https://luma.com/CursorCafeKampala"
+      },
+      "events": [
+        {
+          "name": "Cafe Cursor Kampala",
+          "date": "2026-06-07",
+          "status": "past",
+          "rsvps": 56,
+          "attended": 44,
+          "funnel": {
+            "redirect_used": 22,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 22
+          }
+        },
+        {
+          "name": "Cafe Cursor Kampala",
+          "date": "2026-04-26",
+          "status": "past",
+          "rsvps": 48,
+          "attended": 38
+        },
+        {
+          "name": "Cafe Cursor Kampala",
+          "date": "2026-03-08",
+          "status": "past",
+          "rsvps": 42,
+          "attended": 32
+        }
+      ]
+    },
+    {
+      "id": "barranquilla",
+      "name": "Barranquilla",
+      "country": "Colombia",
+      "lat": 10.9639,
+      "lng": -74.7964,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 80,
+      "health": {
+        "score": 0.198,
+        "state": "quiet",
+        "factors": {
+          "cadence": 0,
+          "trend": 0.19,
+          "recency": 0.33,
+          "funnel": 0.42
+        }
+      },
+      "next_event": {
+        "name": "Cafe Cursor Barranquilla",
+        "date": "2026-07-09",
+        "rsvps": null,
+        "url": "https://luma.com/cursor-2um8"
+      },
+      "events": [
+        {
+          "name": "Cafe Cursor Barranquilla",
+          "date": "2026-04-23",
+          "status": "past",
+          "rsvps": 28,
+          "attended": 18,
+          "funnel": {
+            "redirect_used": 9,
+            "signed_up": 5,
+            "activated_w1": 3,
+            "active_w4": 2,
+            "unattributed": 9
+          }
+        },
+        {
+          "name": "Cursor Barranquilla Meetup",
+          "date": "2026-03-19",
+          "status": "past",
+          "rsvps": 32,
+          "attended": 22
+        },
+        {
+          "name": "Cafe Cursor Barranquilla",
+          "date": "2026-02-05",
+          "status": "past",
+          "rsvps": 36,
+          "attended": 26
+        }
+      ]
+    },
+    {
+      "id": "guatemala-city",
+      "name": "Guatemala City",
+      "country": "Guatemala",
+      "lat": 14.6349,
+      "lng": -90.5069,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 95,
+      "health": {
+        "score": 0.674,
+        "state": "steady",
+        "factors": {
+          "cadence": 0.5,
+          "trend": 1,
+          "recency": 0.77,
+          "funnel": 0.48
+        }
+      },
+      "next_event": {
+        "name": "Cursor x Tec Hackaton",
+        "date": "2026-07-16",
+        "rsvps": null,
+        "url": "https://luma.com/pc9qvm82"
+      },
+      "events": [
+        {
+          "name": "Cursor x Tec Hackathon",
+          "date": "2026-06-11",
+          "status": "past",
+          "rsvps": 55,
+          "attended": 42,
+          "funnel": {
+            "redirect_used": 22,
+            "signed_up": 12,
+            "activated_w1": 8,
+            "active_w4": 5,
+            "unattributed": 20
+          }
+        },
+        {
+          "name": "Cursor Guatemala City Meetup",
+          "date": "2026-04-30",
+          "status": "past",
+          "rsvps": 40,
+          "attended": 30
+        },
+        {
+          "name": "Cafe Cursor Guatemala City",
+          "date": "2026-03-05",
+          "status": "past",
+          "rsvps": 34,
+          "attended": 25
+        }
+      ]
+    },
+    {
+      "id": "philadelphia",
+      "name": "Philadelphia",
+      "country": "United States",
+      "lat": 39.9526,
+      "lng": -75.1652,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 85,
+      "health": {
+        "score": 0.31,
+        "state": "cooling",
+        "factors": {
+          "cadence": 0,
+          "trend": 0.18,
+          "recency": 0.93,
+          "funnel": 0.39
+        }
+      },
+      "next_event": {
+        "name": "Cafe Cursor Philadelphia",
+        "date": "2026-07-16",
+        "rsvps": null,
+        "url": "https://luma.com/tkx269iu"
+      },
+      "events": [
+        {
+          "name": "Cafe Cursor Philadelphia",
+          "date": "2026-05-06",
+          "status": "past",
+          "rsvps": 30,
+          "attended": 19,
+          "funnel": {
+            "redirect_used": 9,
+            "signed_up": 5,
+            "activated_w1": 3,
+            "active_w4": 2,
+            "unattributed": 10
+          }
+        },
+        {
+          "name": "Cursor Philadelphia Meetup",
+          "date": "2026-04-01",
+          "status": "past",
+          "rsvps": 34,
+          "attended": 24
+        },
+        {
+          "name": "Cafe Cursor Philadelphia",
+          "date": "2026-02-18",
+          "status": "past",
+          "rsvps": 38,
+          "attended": 28
+        }
+      ]
+    },
+    {
+      "id": "bangalore",
+      "name": "Bangalore",
+      "country": "India",
+      "lat": 12.9716,
+      "lng": 77.5946,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 350,
+      "health": {
+        "score": 0.835,
+        "state": "thriving",
+        "factors": {
+          "cadence": 1,
+          "trend": 0.86,
+          "recency": 0.93,
+          "funnel": 0.42
+        }
+      },
+      "next_event": null,
+      "events": [
+        {
+          "name": "Cafe Cursor Bangalore",
+          "date": "2026-06-28",
+          "status": "past",
+          "rsvps": 96,
+          "attended": 95,
+          "funnel": {
+            "redirect_used": 45,
+            "signed_up": 24,
+            "activated_w1": 16,
+            "active_w4": 10,
+            "unattributed": 50
+          }
+        },
+        {
+          "name": "Cafe Cursor Bangalore",
+          "date": "2026-05-31",
+          "status": "past",
+          "rsvps": 90,
+          "attended": 88,
+          "funnel": {
+            "redirect_used": 42,
+            "signed_up": 22,
+            "activated_w1": 14,
+            "active_w4": 9,
+            "unattributed": 46
+          }
+        },
+        {
+          "name": "Cursor Bangalore Meetup",
+          "date": "2026-04-05",
+          "status": "past",
+          "rsvps": 85,
+          "attended": 70
+        },
+        {
+          "name": "Cafe Cursor Bangalore",
+          "date": "2026-02-08",
+          "status": "past",
+          "rsvps": 75,
+          "attended": 62
+        }
+      ]
+    },
+    {
+      "id": "san-francisco",
+      "name": "San Francisco",
+      "country": "United States",
+      "lat": 37.7749,
+      "lng": -122.4194,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 240,
+      "health": {
+        "score": 0.672,
+        "state": "steady",
+        "factors": {
+          "cadence": 0.5,
+          "trend": 0.87,
+          "recency": 0.92,
+          "funnel": 0.48
+        }
+      },
+      "next_event": null,
+      "events": [
+        {
+          "name": "Cafe Cursor San Francisco",
+          "date": "2026-06-26",
+          "status": "past",
+          "rsvps": 64,
+          "attended": 52,
+          "funnel": {
+            "redirect_used": 27,
+            "signed_up": 15,
+            "activated_w1": 10,
+            "active_w4": 6,
+            "unattributed": 25
+          }
+        },
+        {
+          "name": "Cursor SF Build Night",
+          "date": "2026-05-09",
+          "status": "past",
+          "rsvps": 55,
+          "attended": 44
+        },
+        {
+          "name": "Cafe Cursor San Francisco",
+          "date": "2026-03-14",
+          "status": "past",
+          "rsvps": 50,
+          "attended": 38
+        }
+      ]
+    },
+    {
+      "id": "los-angeles",
+      "name": "Los Angeles",
+      "country": "United States",
+      "lat": 33.9802,
+      "lng": -118.4517,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 100,
+      "health": {
+        "score": 0.807,
+        "state": "thriving",
+        "factors": {
+          "cadence": 1,
+          "trend": 0.86,
+          "recency": 0.82,
+          "funnel": 0.39
+        }
+      },
+      "next_event": {
+        "name": "Cafe Cursor Los Angeles",
+        "date": "2026-07-15",
+        "rsvps": null,
+        "url": "https://luma.com/g581r6a7"
+      },
+      "events": [
+        {
+          "name": "Cafe Cursor Los Angeles",
+          "date": "2026-06-22",
+          "status": "past",
+          "rsvps": 48,
+          "attended": 38,
+          "funnel": {
+            "redirect_used": 19,
+            "signed_up": 10,
+            "activated_w1": 6,
+            "active_w4": 4,
+            "unattributed": 19
+          }
+        },
+        {
+          "name": "Cafe Cursor Los Angeles",
+          "date": "2026-05-11",
+          "status": "past",
+          "rsvps": 42,
+          "attended": 33
+        },
+        {
+          "name": "Cafe Cursor Los Angeles",
+          "date": "2026-03-16",
+          "status": "past",
+          "rsvps": 38,
+          "attended": 28
+        }
+      ]
+    },
+    {
+      "id": "florence",
+      "name": "Florence",
+      "country": "Italy",
+      "lat": 43.7696,
+      "lng": 11.2558,
+      "ambassador": {
+        "name": null,
+        "note": "host not yet mapped"
+      },
+      "members": 60,
+      "health": {
+        "score": 0.275,
+        "state": "quiet",
+        "factors": {
+          "cadence": 0.5,
+          "trend": 0,
+          "recency": 0,
+          "funnel": 0.5
+        }
+      },
+      "next_event": null,
+      "events": [
+        {
+          "name": "Cursor Florence Meetup",
+          "date": "2026-05-24",
+          "status": "past",
+          "rsvps": 14,
+          "attended": 10,
+          "funnel": {
+            "redirect_used": 5,
+            "signed_up": 3,
+            "activated_w1": 2,
+            "active_w4": 1,
+            "unattributed": 5
+          }
+        },
+        {
+          "name": "Cafe Cursor Florence",
+          "date": "2026-02-14",
+          "status": "past",
+          "rsvps": 30,
+          "attended": 22
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "severity": "amber",
+      "city_id": "florence",
+      "title": "Florence quiet for six weeks",
+      "why": "No event since May 24 and no upcoming session on the calendar; the host was last active Apr 20.",
+      "action": "Check in with the ambassador and offer a co-hosted format for September."
+    },
+    {
+      "severity": "amber",
+      "city_id": "bangalore",
+      "title": "Bangalore waitlist overflowed twice running",
+      "why": "The last two Cafe Cursor Bangalore sessions filled to RSVP capacity and turned away a waitlist, signaling the venue is now the binding constraint.",
+      "action": "Move Bangalore to a larger venue or add a second monthly session to absorb demand."
+    },
+    {
+      "severity": "green",
+      "city_id": null,
+      "title": "Forum activity spiking in Belo Horizonte with no program yet",
+      "why": "Mentions of Belo Horizonte builders in the community forum have roughly tripled this month while Rio and Aracaju both run regular sessions nearby.",
+      "action": "Scope a first Cafe Cursor Belo Horizonte session and source a local host from the forum thread."
+    }
+  ]
+}

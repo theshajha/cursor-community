@@ -550,7 +550,7 @@
       "luma_city_match": ["Philadelphia"],
       "ambassador": { "name": null, "note": "host not yet mapped" },
       "members": 85,
-      "host_last_active": "2026-06-10",
+      "host_last_active": "2026-07-05",
       "baseline_60d": 2,
       "events": [
         {
@@ -702,8 +702,8 @@
       "luma_city_match": ["Florence"],
       "ambassador": { "name": null, "note": "host not yet mapped" },
       "members": 60,
-      "host_last_active": "2026-06-12",
-      "baseline_60d": 1,
+      "host_last_active": "2026-04-20",
+      "baseline_60d": 2,
       "events": [
         {
           "name": "Cafe Cursor Florence",
@@ -716,9 +716,9 @@
           "name": "Cursor Florence Meetup",
           "date": "2026-05-24",
           "status": "past",
-          "rsvps": 26,
-          "attended": 18,
-          "funnel": { "redirect_used": 9, "signed_up": 5, "activated_w1": 3, "active_w4": 2, "unattributed": 9 }
+          "rsvps": 14,
+          "attended": 10,
+          "funnel": { "redirect_used": 5, "signed_up": 3, "activated_w1": 2, "active_w4": 1, "unattributed": 5 }
         }
       ]
     }
@@ -728,7 +728,7 @@
       "severity": "amber",
       "city_id": "florence",
       "title": "Florence quiet for six weeks",
-      "why": "No event since May 24 and no upcoming session on the calendar; the host was last active Jun 12.",
+      "why": "No event since May 24 and no upcoming session on the calendar; the host was last active Apr 20.",
       "action": "Check in with the ambassador and offer a co-hosted format for September."
     },
     {
