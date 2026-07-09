@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T05:30:45.650Z",
+  "generated_at": "2026-07-09T05:54:22.920Z",
   "week_of": "2026-07-06",
   "formula": "health = 0.35·cadence + 0.25·trend + 0.20·recency + 0.20·funnel\ncadence  events last 60d vs the city’s own trailing baseline\ntrend    slope of the last 3 events’ attendance\nrecency  days since the host was last active (60d floor)\nfunnel   attended → activated-week-1, most recent measured event\nthriving ≥ .75 · steady ≥ .50 · cooling ≥ .30 · quiet < .30",
   "kpis": {
@@ -7,18 +7,18 @@
       "value": 19,
       "delta": 2,
       "spark": [
-        1,
-        1,
-        3,
-        4,
-        2,
-        2,
-        4,
-        3,
-        2,
-        4,
-        6,
-        2
+        18,
+        18,
+        18,
+        18,
+        18,
+        17,
+        18,
+        18,
+        18,
+        19,
+        19,
+        19
       ]
     },
     "events_30d": {
@@ -41,7 +41,7 @@
     },
     "activation_rate_30d": {
       "value": 0.2,
-      "delta": 0.02,
+      "delta": 0.01,
       "spark": [
         0,
         0.19,
@@ -51,15 +51,15 @@
         0.21,
         0.19,
         0.16,
-        0.19,
+        0.2,
         0.21,
-        0.19,
+        0.2,
         0.19
       ]
     },
     "new_builders_30d": {
-      "value": 234,
-      "delta": 106,
+      "value": 236,
+      "delta": 107,
       "spark": [
         0,
         27,
@@ -71,7 +71,7 @@
         32,
         24,
         80,
-        94,
+        97,
         48
       ]
     }
@@ -88,6 +88,7 @@
         "note": "hosts, Cursor Thailand"
       },
       "members": 420,
+      "host_last_active": "2026-07-02",
       "health": {
         "score": 0.827,
         "state": "thriving",
@@ -177,6 +178,7 @@
         "note": "host not yet mapped"
       },
       "members": 60,
+      "host_last_active": "2026-06-25",
       "health": {
         "score": 0.717,
         "state": "steady",
@@ -221,6 +223,7 @@
         "note": "host not yet mapped"
       },
       "members": 380,
+      "host_last_active": "2026-07-07",
       "health": {
         "score": 0.856,
         "state": "thriving",
@@ -293,6 +296,7 @@
         "note": "host not yet mapped"
       },
       "members": 260,
+      "host_last_active": "2026-06-30",
       "health": {
         "score": 0.637,
         "state": "steady",
@@ -351,6 +355,7 @@
         "note": "host not yet mapped"
       },
       "members": 90,
+      "host_last_active": "2026-06-14",
       "health": {
         "score": 0.397,
         "state": "cooling",
@@ -409,6 +414,7 @@
         "note": "Cursor Mini Summer Hackathon Helsinki host, public on Luma"
       },
       "members": 130,
+      "host_last_active": "2026-07-06",
       "health": {
         "score": 0.673,
         "state": "steady",
@@ -467,6 +473,7 @@
         "note": "host not yet mapped"
       },
       "members": 310,
+      "host_last_active": "2026-07-03",
       "health": {
         "score": 0.872,
         "state": "thriving",
@@ -539,6 +546,7 @@
         "note": "Cursor Aracaju host, public on Luma"
       },
       "members": 150,
+      "host_last_active": "2026-07-05",
       "health": {
         "score": 0.704,
         "state": "steady",
@@ -597,6 +605,7 @@
         "note": "host not yet mapped"
       },
       "members": 190,
+      "host_last_active": "2026-07-01",
       "health": {
         "score": 0.838,
         "state": "thriving",
@@ -621,11 +630,11 @@
           "rsvps": 52,
           "attended": 41,
           "funnel": {
-            "redirect_used": 21,
-            "signed_up": 12,
+            "redirect_used": 23,
+            "signed_up": 13,
             "activated_w1": 8,
             "active_w4": 5,
-            "unattributed": 20
+            "unattributed": 18
           }
         },
         {
@@ -655,14 +664,15 @@
         "note": "host not yet mapped"
       },
       "members": 120,
+      "host_last_active": "2026-06-10",
       "health": {
-        "score": 0.73,
+        "score": 0.741,
         "state": "steady",
         "factors": {
           "cadence": 1,
           "trend": 0.75,
           "recency": 0.52,
-          "funnel": 0.44
+          "funnel": 0.5
         }
       },
       "next_event": {
@@ -679,11 +689,11 @@
           "rsvps": 58,
           "attended": 45,
           "funnel": {
-            "redirect_used": 23,
-            "signed_up": 12,
-            "activated_w1": 8,
-            "active_w4": 5,
-            "unattributed": 22
+            "redirect_used": 25,
+            "signed_up": 14,
+            "activated_w1": 9,
+            "active_w4": 6,
+            "unattributed": 20
           }
         },
         {
@@ -713,6 +723,7 @@
         "note": "host not yet mapped"
       },
       "members": 160,
+      "host_last_active": "2026-07-02",
       "health": {
         "score": 0.65,
         "state": "steady",
@@ -771,14 +782,15 @@
         "note": "host not yet mapped"
       },
       "members": 110,
+      "host_last_active": "2026-06-29",
       "health": {
-        "score": 0.651,
+        "score": 0.663,
         "state": "steady",
         "factors": {
           "cadence": 0.5,
           "trend": 0.88,
           "recency": 0.83,
-          "funnel": 0.45
+          "funnel": 0.51
         }
       },
       "next_event": {
@@ -795,11 +807,11 @@
           "rsvps": 56,
           "attended": 44,
           "funnel": {
-            "redirect_used": 22,
-            "signed_up": 12,
-            "activated_w1": 8,
-            "active_w4": 5,
-            "unattributed": 22
+            "redirect_used": 24,
+            "signed_up": 13,
+            "activated_w1": 9,
+            "active_w4": 6,
+            "unattributed": 20
           }
         },
         {
@@ -829,6 +841,7 @@
         "note": "host not yet mapped"
       },
       "members": 80,
+      "host_last_active": "2026-06-08",
       "health": {
         "score": 0.403,
         "state": "cooling",
@@ -887,6 +900,7 @@
         "note": "host not yet mapped"
       },
       "members": 95,
+      "host_last_active": "2026-06-25",
       "health": {
         "score": 0.674,
         "state": "steady",
@@ -911,11 +925,11 @@
           "rsvps": 55,
           "attended": 42,
           "funnel": {
-            "redirect_used": 22,
-            "signed_up": 12,
+            "redirect_used": 21,
+            "signed_up": 11,
             "activated_w1": 8,
             "active_w4": 5,
-            "unattributed": 20
+            "unattributed": 21
           }
         },
         {
@@ -945,6 +959,7 @@
         "note": "host not yet mapped"
       },
       "members": 85,
+      "host_last_active": "2026-06-10",
       "health": {
         "score": 0.402,
         "state": "cooling",
@@ -1003,6 +1018,7 @@
         "note": "host not yet mapped"
       },
       "members": 350,
+      "host_last_active": "2026-07-05",
       "health": {
         "score": 0.835,
         "state": "thriving",
@@ -1070,6 +1086,7 @@
         "note": "host not yet mapped"
       },
       "members": 240,
+      "host_last_active": "2026-05-05",
       "health": {
         "score": 0.129,
         "state": "quiet",
@@ -1123,6 +1140,7 @@
         "note": "host not yet mapped"
       },
       "members": 100,
+      "host_last_active": "2026-06-28",
       "health": {
         "score": 0.807,
         "state": "thriving",
@@ -1181,6 +1199,7 @@
         "note": "host not yet mapped"
       },
       "members": 60,
+      "host_last_active": "2026-04-20",
       "health": {
         "score": 0.275,
         "state": "quiet",
@@ -1236,7 +1255,7 @@
       "severity": "green",
       "city_id": null,
       "title": "Forum activity spiking in Belo Horizonte with no program yet",
-      "why": "Mentions of Belo Horizonte builders in the community forum have roughly tripled this month while Rio and Aracaju both run regular sessions nearby.",
+      "why": "Mentions of Belo Horizonte builders in the community forum have roughly tripled this month while Rio de Janeiro runs regular sessions and Aracaju is active elsewhere in Brazil.",
       "action": "Scope a first Cafe Cursor Belo Horizonte session and source a local host from the forum thread."
     }
   ]

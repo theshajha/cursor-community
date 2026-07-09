@@ -44,7 +44,12 @@ function renderMap() {
   const r = (c) => 3.5 + 3.5 * Math.min(c.members / 500, 1);
   const dots = pulse.cities.map(c => {
     const { x, y } = project(c.lat, c.lng);
-    return `<circle class="city ${c.health.state}" data-id="${c.id}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r(c).toFixed(1)}" tabindex="0" role="button" aria-label="${c.name} — ${c.health.state}"/>`;
+    const cx = x.toFixed(1), cy = y.toFixed(1);
+    // Hit circle sits behind the visible dot and extends the tap target to a
+    // usable size on phones (visible dots render ~2-5px there). Same data-id,
+    // events delegated together below; the visible dot keeps tabindex/aria.
+    return `<circle class="city-hit" data-id="${c.id}" cx="${cx}" cy="${cy}" r="13" aria-hidden="true"/>` +
+      `<circle class="city ${c.health.state}" data-id="${c.id}" cx="${cx}" cy="${cy}" r="${r(c).toFixed(1)}" tabindex="0" role="button" aria-label="${c.name} — ${c.health.state}"/>`;
   }).join('');
   $('#map').innerHTML =
     `<svg viewBox="${VIEWBOX}" xmlns="http://www.w3.org/2000/svg">
@@ -89,30 +94,36 @@ function showTip(circle, c) {
 function hideTip() { tip.hidden = true; }
 
 // ---- interaction wiring (delegated on the map) ----
+// Both the visible dot (.city) and its larger invisible tap target (.city-hit)
+// share data-id and are handled identically; always resolve to the visible
+// dot for tooltip positioning and focus so hit-circle taps look and behave
+// the same as dot taps.
 const map = $('#map');
+const hitTarget = (e) => e.target.closest('.city, .city-hit');
+const visibleDot = (id) => $(`.city[data-id="${id}"]`);
 map.addEventListener('pointerover', (e) => {
-  const dot = e.target.closest('.city');
-  if (dot) showTip(dot, cityById.get(dot.dataset.id));
+  const dot = hitTarget(e);
+  if (dot) showTip(visibleDot(dot.dataset.id), cityById.get(dot.dataset.id));
 });
 map.addEventListener('pointerout', (e) => {
-  if (e.target.closest('.city')) hideTip();
+  if (hitTarget(e)) hideTip();
 });
 map.addEventListener('focusin', (e) => {
-  const dot = e.target.closest('.city');
-  if (dot) showTip(dot, cityById.get(dot.dataset.id));
+  const dot = hitTarget(e);
+  if (dot) showTip(visibleDot(dot.dataset.id), cityById.get(dot.dataset.id));
 });
 map.addEventListener('focusout', (e) => {
-  if (e.target.closest('.city')) hideTip();
+  if (hitTarget(e)) hideTip();
 });
 map.addEventListener('click', (e) => {
-  const dot = e.target.closest('.city');
-  if (dot) selectCity(dot.dataset.id, dot);
+  const dot = hitTarget(e);
+  if (dot) selectCity(dot.dataset.id, visibleDot(dot.dataset.id));
 });
 map.addEventListener('keydown', (e) => {
-  const dot = e.target.closest('.city');
+  const dot = hitTarget(e);
   if (dot && (e.key === 'Enter' || e.key === ' ')) {
     e.preventDefault();
-    selectCity(dot.dataset.id, dot);
+    selectCity(dot.dataset.id, visibleDot(dot.dataset.id));
   }
 });
 
@@ -138,7 +149,7 @@ function factorPhrase(key, c) {
     return a[0] > a[a.length - 1] ? 'attendance rising' : 'attendance slipping';
   }
   if (key === 'recency') {
-    const wk = Math.floor(daysBetween(NOW, evs[0].date) / 7);
+    const wk = Math.floor(daysBetween(NOW, c.host_last_active) / 7);
     if (wk <= 1) return 'host active this week';
     if (wk <= 3) return 'host active recently';
     return `host quiet ${wk} weeks`;

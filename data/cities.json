@@ -485,11 +485,11 @@
           "rsvps": 52,
           "attended": 41,
           "funnel": {
-            "redirect_used": 21,
-            "signed_up": 12,
+            "redirect_used": 23,
+            "signed_up": 13,
             "activated_w1": 8,
             "active_w4": 5,
-            "unattributed": 20
+            "unattributed": 18
           }
         }
       ]
@@ -532,11 +532,11 @@
           "rsvps": 58,
           "attended": 45,
           "funnel": {
-            "redirect_used": 23,
-            "signed_up": 12,
-            "activated_w1": 8,
-            "active_w4": 5,
-            "unattributed": 22
+            "redirect_used": 25,
+            "signed_up": 14,
+            "activated_w1": 9,
+            "active_w4": 6,
+            "unattributed": 20
           }
         }
       ]
@@ -626,11 +626,11 @@
           "rsvps": 56,
           "attended": 44,
           "funnel": {
-            "redirect_used": 22,
-            "signed_up": 12,
-            "activated_w1": 8,
-            "active_w4": 5,
-            "unattributed": 22
+            "redirect_used": 24,
+            "signed_up": 13,
+            "activated_w1": 9,
+            "active_w4": 6,
+            "unattributed": 20
           }
         }
       ]
@@ -721,11 +721,11 @@
           "rsvps": 55,
           "attended": 42,
           "funnel": {
-            "redirect_used": 22,
-            "signed_up": 12,
+            "redirect_used": 21,
+            "signed_up": 11,
             "activated_w1": 8,
             "active_w4": 5,
-            "unattributed": 20
+            "unattributed": 21
           }
         }
       ]
@@ -994,7 +994,7 @@
       "severity": "green",
       "city_id": null,
       "title": "Forum activity spiking in Belo Horizonte with no program yet",
-      "why": "Mentions of Belo Horizonte builders in the community forum have roughly tripled this month while Rio and Aracaju both run regular sessions nearby.",
+      "why": "Mentions of Belo Horizonte builders in the community forum have roughly tripled this month while Rio de Janeiro runs regular sessions and Aracaju is active elsewhere in Brazil.",
       "action": "Scope a first Cafe Cursor Belo Horizonte session and source a local host from the forum thread."
     }
   ]

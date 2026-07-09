@@ -41,19 +41,27 @@ const spark = (fn) => Array.from({ length: 12 }, (_, i) => {
 const active = (list) => list.filter(c =>
   past(c).some(e => daysAgo(e.date) <= 90) || c.next_event).length;
 
+// active_programs sparkline: distinct cities with >=1 past event in the
+// trailing 90 days, evaluated as of each of the 12 completed-week bucket
+// ends (same (12-i)*7 boundary the other sparks use) — not event count, so
+// it tracks the "active programs" metric instead of duplicating events_30d.
+const activeCitiesAsOf = (endDaysAgo) =>
+  cities.filter(c => past(c).some(e => inWindow(e, endDaysAgo + 90, endDaysAgo))).length;
+const activeProgramsSpark = Array.from({ length: 12 }, (_, i) => activeCitiesAsOf((12 - i) * 7));
+
 const pulse = {
   generated_at: new Date().toISOString(),
   week_of: monday,
   formula: FORMULA_TEXT,
   kpis: {
-    active_programs: { value: active(cities), delta: 2, spark: spark(evs => new Set(evs.map(e => e.name)).size) },
+    active_programs: { value: active(cities), delta: 2, spark: activeProgramsSpark },
     events_30d: { value: win.length, delta: win.length - prev.length, spark: spark(evs => evs.length) },
     activation_rate_30d: { value: rate(win), delta: +(rate(win) - rate(prev)).toFixed(2), spark: spark(rate) },
     new_builders_30d: { value: sumF(win, 'signed_up'), delta: sumF(win, 'signed_up') - sumF(prev, 'signed_up'), spark: spark(evs => sumF(evs, 'signed_up')) },
   },
   cities: cities.map(c => ({
     id: c.id, name: c.name, country: c.country, lat: c.lat, lng: c.lng,
-    ambassador: c.ambassador, members: c.members,
+    ambassador: c.ambassador, members: c.members, host_last_active: c.host_last_active,
     health: healthScore(c, today),
     next_event: c.next_event,
     events: past(c).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4),

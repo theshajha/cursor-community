@@ -107,6 +107,9 @@ h2 { font:600 15px/1.3 var(--sans); }
 .city { stroke-width:1; }
 .city:hover, .city.active { stroke:var(--border-3); stroke-width:1.5; }
 .city:focus-visible { outline:2px solid var(--border-3); outline-offset:2px; }
+/* Invisible tap-target extension behind each dot — see app.js renderMap(). */
+.city-hit { fill:transparent; pointer-events:all; cursor:pointer; }
+.city-hit:hover + .city { stroke:var(--border-3); stroke-width:1.5; }
 
 /* ---- Tooltip ---- */
 .tooltip {
