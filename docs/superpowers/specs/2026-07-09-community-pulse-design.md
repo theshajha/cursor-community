@@ -49,8 +49,8 @@ without impersonating an official property.
    mobile; Esc / swipe-down closes):
    - City header: ambassador name, member count, health badge + one-line
      "why this state" explainer.
-   - Last-event card: name, date, venue, photo (Dubai only), attendance vs.
-     RSVPs.
+   - Last-event card: name, date, venue, photo (Bangkok only), attendance
+     vs. RSVPs.
    - **The funnel (centerpiece):** RSVP'd → attended → used redirect → new
      signup → activated wk 1 → still active wk 4 — **with the unattributed
      bucket shown explicitly.** Attribution honesty is a deliberate craft
@@ -62,8 +62,9 @@ without impersonating an official property.
    - "Bangalore waitlist overflowed 2× running — capacity signal"
    - "Forum activity spiking in Brazil — no program there yet"
 6. **Footer** — attribution ("A concept by Shashank Jha for the Community
-   Engineer role") + the honesty line: *"Illustrative data. Dubai's numbers
-   are real — observed firsthand at Cafe Cursor Dubai, Jun 18."*
+   Engineer role") + the honesty line: *"Cities and events are real, from
+   the public Luma calendar. The attribution layer is illustrative — that's
+   the part I'd build."*
 
 ### The health model (the "engineer" tell)
 
@@ -88,16 +89,34 @@ real formula the demo actually runs — no theater. Each city's health state in
 
 ### Sourcing
 
-- **Real skeleton:** city names anchored in reality — Bangalore, San
-  Francisco, Florence, Tallinn (featured on cursor.com/ambassadors), Dubai,
-  Chiang Mai, Bangkok (known firsthand). Plus ~6 plausible cities (London,
-  NYC, Tokyo, São Paulo, Berlin, Seoul). ~13 total.
-- **Synthetic flesh:** all metrics invented but plausible and internally
-  consistent (funnels must sum; trends must match sparklines; health states
-  must follow from the formula).
-- **Dubai is fully fleshed** — the real Cafe Cursor Dubai event (Jun 18),
-  real headcount (**OPEN: get from Shashank**), real photos if he has them
-  (**OPEN**), and his upcoming Builders Night v1 as a scheduled event.
+- **Real skeleton — the public Luma calendar.** The official
+  `lu.ma/cursorcommunity` calendar lists 20+ real upcoming events across five
+  continents (Cafe Cursor Barranquilla / Kampala / London / LA / Philadelphia
+  / OKC / Tandil, hackathons in London, Berlin, Tallinn, Helsinki, Cairo,
+  Guatemala City, meetups in Rio, Aracaju, Canela, Miami, Frankfurt, Yaoundé,
+  Vadodara) with hosts and registration counts. A real ingest script
+  (`scripts/fetch-luma.mjs`) snapshots this public data into the pipeline —
+  the demo's cities, events, dates, hosts, and RSVP counts are REAL. Plus
+  Dubai, Chiang Mai, Bangkok (known firsthand), and the four cities featured
+  on cursor.com/ambassadors.
+- **Synthetic layer — attribution only:** funnel conversion (redirect →
+  signup → activation → retention), member counts, and therefore health
+  states are illustrative — this is exactly the layer that requires internal
+  data and that the Community Engineer role exists to build. The footer says
+  so explicitly: *"Cities and events are real, from the public Luma calendar.
+  The attribution layer is illustrative — that's the part I'd build."*
+  Synthetic values must be plausible and internally consistent (funnels sum;
+  trends match sparklines; health states follow from the formula), and
+  anchored to real RSVP counts where known.
+- **Bangkok is the fully-fleshed hero drill-down** — the real Cursor Sunday
+  Bangkok event (Mar 29 2026, The Decaf, 129 attendees, Nick Miller Q&A —
+  the community's 6th event in 3 months, i.e. genuinely "thriving" by the
+  formula), with real photos Shashank has from the event (**OPEN: he drops
+  them into the repo; include a photo credit line — the event page credits
+  The Decaf**). Shashank attended and knows the ambassador firsthand.
+- **Dubai stays real-anchored**: Cafe Cursor Dubai (Jun 18) with his real
+  observed headcount (**OPEN, optional**) and his upcoming Builders Night v1
+  as a scheduled event — no photos.
 - Other cities get a deliberate "no media synced" empty state — no fake
   photos of strangers' events.
 
@@ -160,9 +179,14 @@ Grounded in tokens extracted from cursor.com production CSS (Jul 2026):
   (`scripts/gen-map.mjs`) from a public land/coastline dataset → inline SVG
   committed to the repo. City dots positioned by lat/lng → equirectangular
   projection. No map library, no tiles, no API keys.
-- **Health computation:** `scripts/derive.mjs` computes health scores and
-  KPI aggregates from raw event data → writes `pulse.json`. The formula in
-  the UI popover and the script are the same source of truth.
+- **Ingest:** `scripts/fetch-luma.mjs` snapshots the public
+  `lu.ma/cursorcommunity` calendar (events, cities, hosts, RSVP counts) into
+  `data/raw-events.json` — a real, re-runnable pipeline, committed with its
+  snapshot date. Run manually; the site itself stays fully static.
+- **Health computation:** `scripts/derive.mjs` merges the Luma snapshot with
+  the curated city/attribution data, computes health scores and KPI
+  aggregates → writes `pulse.json`. The formula in the UI popover and the
+  script are the same source of truth.
 - **Interactions:** hover tooltips, click → panel, Esc close, reduced-motion
   respected. Micro-transitions only (≤200ms); nothing animated for its own
   sake.
@@ -205,7 +229,10 @@ analytics on the demo itself.
 
 ## Open items (need Shashank)
 
-1. Real Cafe Cursor Dubai headcount (Jun 18) — thread notes it was never
-   filled in.
-2. Dubai event photos — does he have usable ones he took himself?
+1. Bangkok photos — drop his Cursor Sunday Bangkok (Mar 29) photos into the
+   repo (`assets/photos/bangkok/`); confirm they're his own shots (the event
+   page's album credits The Decaf — we only ship photos he took or has
+   permission for, with a credit line).
+2. Real Cafe Cursor Dubai headcount (Jun 18) — optional now; thread notes it
+   was never filled in.
 3. Deploy domain — `pulse.theshajha.com` or other.
