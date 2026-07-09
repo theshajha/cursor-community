@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T05:13:40.657Z",
+  "generated_at": "2026-07-09T05:17:37.180Z",
   "week_of": "2026-07-06",
   "formula": "health = 0.35·cadence + 0.25·trend + 0.20·recency + 0.20·funnel\ncadence  events last 60d vs the city’s own trailing baseline\ntrend    slope of the last 3 events’ attendance\nrecency  days since the host was last active (60d floor)\nfunnel   attended → activated-week-1, most recent measured event\nthriving ≥ .75 · steady ≥ .50 · cooling ≥ .30 · quiet < .30",
   "kpis": {
@@ -8,23 +8,6 @@
       "delta": 2,
       "spark": [
         1,
-        3,
-        4,
-        2,
-        2,
-        4,
-        3,
-        2,
-        4,
-        6,
-        2,
-        0
-      ]
-    },
-    "events_30d": {
-      "value": 13,
-      "delta": 1,
-      "spark": [
         1,
         3,
         4,
@@ -35,14 +18,32 @@
         2,
         4,
         6,
+        2
+      ]
+    },
+    "events_30d": {
+      "value": 13,
+      "delta": 1,
+      "spark": [
+        1,
+        1,
+        3,
+        4,
         2,
-        0
+        2,
+        4,
+        3,
+        2,
+        4,
+        6,
+        2
       ]
     },
     "activation_rate_30d": {
       "value": 0.2,
       "delta": 0.02,
       "spark": [
+        0,
         0.19,
         0.17,
         0,
@@ -53,14 +54,14 @@
         0.19,
         0.21,
         0.19,
-        0.19,
-        0
+        0.19
       ]
     },
     "new_builders_30d": {
       "value": 234,
       "delta": 106,
       "spark": [
+        0,
         27,
         8,
         0,
@@ -71,8 +72,7 @@
         24,
         80,
         94,
-        48,
-        0
+        48
       ]
     }
   },

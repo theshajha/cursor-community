@@ -1,11 +1,15 @@
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
-// MIRROR of scripts/lib/project.mjs — keep character-identical.
-const MAP_W = 1000, MAP_H = 500, VIEWBOX = '0 14 1000 403';
+// MIRROR of scripts/lib/project.mjs — keep project() and MAP_W/H character-identical.
+const MAP_W = 1000, MAP_H = 500;
 function project(lat, lng) {
   return { x: ((lng + 180) / 360) * MAP_W, y: ((90 - lat) / 180) * MAP_H };
 }
+// Display crop only (not part of the projection mirror): land spans y≈23–403,
+// so this frames the landmass tightly without clipping any of it. The 0 14 1000 403
+// reference window lives in project.mjs; here we trim the dead top/bottom margin.
+const VIEWBOX = '0 22 1000 382';
 
 const [pulse, mapPath] = await Promise.all([
   fetch('data/pulse.json').then(r => r.json()),

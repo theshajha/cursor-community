@@ -31,9 +31,10 @@ const prev = cities.flatMap(c => past(c).filter(e => inWindow(e, 60, 30)));
 const attended = (evs) => evs.reduce((s, e) => s + e.attended, 0);
 const rate = (evs) => { const a = attended(evs.filter(e => e.funnel)); return a ? +(sumF(evs, 'activated_w1') / a).toFixed(2) : 0; };
 
-// 12 weekly buckets for sparklines (events per week; builders per week).
+// 12 weekly buckets for sparklines — last 12 COMPLETED weeks (exclude the
+// current partial week so the trailing point isn't an artificial dip).
 const spark = (fn) => Array.from({ length: 12 }, (_, i) => {
-  const evs = cities.flatMap(c => past(c).filter(e => inWindow(e, (12 - i) * 7, (11 - i) * 7)));
+  const evs = cities.flatMap(c => past(c).filter(e => inWindow(e, (13 - i) * 7, (12 - i) * 7)));
   return fn(evs);
 });
 
