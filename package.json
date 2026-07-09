@@ -1,0 +1,17 @@
+{
+  "name": "community-pulse",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/",
+    "map": "node scripts/gen-map.mjs",
+    "fetch": "node scripts/fetch-luma.mjs",
+    "derive": "node scripts/derive.mjs",
+    "data": "npm run fetch; npm run derive"
+  },
+  "devDependencies": {
+    "world-atlas": "^2.0.2",
+    "topojson-client": "^3.1.0",
+    "d3-geo": "^3.1.0"
+  }
+}
