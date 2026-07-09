@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community Pulse — a concept for Cursor</title>
+<meta name="description" content="A working concept of an internal community-ops dashboard for Cursor's community programs.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <p class="label">Community Pulse</p>
+    <h1>The community, this week</h1>
+  </div>
+  <div class="top-meta">
+    <p class="serif-accent" id="week-label">Week of —</p>
+    <p class="small" id="freshness">synced —</p>
+  </div>
+</header>
+
+<section id="kpis" aria-label="Program KPIs">
+  <article class="kpi" data-kpi="active_programs"><p class="label">Active programs</p><p class="num-lg">—</p><p class="delta small">—</p><svg class="spark" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"></svg></article>
+  <article class="kpi" data-kpi="events_30d"><p class="label">Events · last 30d</p><p class="num-lg">—</p><p class="delta small">—</p><svg class="spark" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"></svg></article>
+  <article class="kpi" data-kpi="activation_rate_30d"><p class="label">Attendee → activated</p><p class="num-lg">—</p><p class="delta small">—</p><svg class="spark" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"></svg></article>
+  <article class="kpi" data-kpi="new_builders_30d"><p class="label">New builders · 30d</p><p class="num-lg">—</p><p class="delta small">—</p><svg class="spark" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"></svg></article>
+</section>
+
+<section class="map-card" aria-label="Program map">
+  <div class="map-head">
+    <div class="legend" aria-hidden="true">
+      <span><i class="dot thriving"></i>thriving</span><span><i class="dot steady"></i>steady</span>
+      <span><i class="dot cooling"></i>cooling</span><span><i class="dot quiet"></i>quiet</span>
+    </div>
+    <button id="formula-btn" class="small" aria-expanded="false" aria-controls="formula-popover">ⓘ how health is computed</button>
+  </div>
+  <div id="map" role="img" aria-label="World map of community programs, colored by health"></div>
+  <div id="formula-popover" class="popover" hidden><pre class="num"></pre></div>
+  <div id="tooltip" class="tooltip" hidden></div>
+</section>
+
+<section id="signals" aria-label="Needs attention">
+  <h2>Needs attention</h2>
+  <div class="signal-row"></div>
+</section>
+
+<aside id="panel" aria-label="City detail" hidden></aside>
+<div id="panel-backdrop" hidden></div>
+
+<footer>
+  <p class="small">A concept by <a href="https://theshajha.com">Shashank Jha</a> for the Community Engineer role.</p>
+  <p class="small sec">Cities and events are real, from the public <a href="https://luma.com/cursorcommunity">Luma calendar</a>. The attribution layer is illustrative — that's the part I'd build. <a href="DESIGN.md">Design language</a> · <a href="https://github.com/theshajha">Source</a></p>
+</footer>
+
+<script src="app.js" type="module"></script>
+</body>
+</html>
