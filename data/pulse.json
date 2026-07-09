@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T04:34:53.541Z",
+  "generated_at": "2026-07-09T05:13:40.657Z",
   "week_of": "2026-07-06",
   "formula": "health = 0.35·cadence + 0.25·trend + 0.20·recency + 0.20·funnel\ncadence  events last 60d vs the city’s own trailing baseline\ntrend    slope of the last 3 events’ attendance\nrecency  days since the host was last active (60d floor)\nfunnel   attended → activated-week-1, most recent measured event\nthriving ≥ .75 · steady ≥ .50 · cooling ≥ .30 · quiet < .30",
   "kpis": {
@@ -156,7 +156,11 @@
             "active_w4": 19,
             "unattributed": 55
           },
-          "media": [],
+          "media": [
+            "assets/photos/bangkok/01.jpg",
+            "assets/photos/bangkok/02.jpg",
+            "assets/photos/bangkok/03.jpg"
+          ],
           "source": "firsthand",
           "url": "https://cursorthailand.com/cursor-sunday-29032026"
         }

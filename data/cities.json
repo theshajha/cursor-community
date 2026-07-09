@@ -34,7 +34,7 @@
           "rsvps": 160,
           "attended": 129,
           "funnel": { "redirect_used": 74, "signed_up": 41, "activated_w1": 28, "active_w4": 19, "unattributed": 55 },
-          "media": [],
+          "media": ["assets/photos/bangkok/01.jpg", "assets/photos/bangkok/02.jpg", "assets/photos/bangkok/03.jpg"],
           "source": "firsthand",
           "url": "https://cursorthailand.com/cursor-sunday-29032026"
         },
