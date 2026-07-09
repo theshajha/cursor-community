@@ -346,3 +346,60 @@ document.addEventListener('keydown', (e) => {
   if (!panel.hidden) closePanel();
   else if (!pop.hidden) setPopover(false);
 });
+
+// ---- KPIs + sparklines ----
+function renderSpark(svg, data) {
+  const n = data.length;
+  if (!n) return;
+  const min = Math.min(...data), max = Math.max(...data);
+  const range = (max - min) || 1;
+  const W = 100, H = 24, pad = 3;
+  const pts = data.map((v, i) => {
+    const x = n === 1 ? W / 2 : (i / (n - 1)) * W;
+    const y = H - pad - ((v - min) / range) * (H - 2 * pad);
+    return [x, y];
+  });
+  const poly = pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' ');
+  const [lx, ly] = pts[n - 1];
+  svg.innerHTML =
+    `<polyline points="${poly}"/><line x1="${lx.toFixed(1)}" y1="${ly.toFixed(1)}" x2="${lx.toFixed(1)}" y2="${ly.toFixed(1)}"/>`;
+}
+
+function renderKPIs() {
+  for (const [key, k] of Object.entries(pulse.kpis)) {
+    const art = $(`.kpi[data-kpi="${key}"]`);
+    if (!art) continue;
+    const isRate = key === 'activation_rate_30d';
+    $('.num-lg', art).textContent = isRate ? `${Math.round(k.value * 100)}%` : String(k.value);
+    const deltaEl = $('.delta', art);
+    if (!k.delta) {
+      deltaEl.textContent = '—';
+      deltaEl.className = 'delta small flat';
+    } else {
+      const up = k.delta > 0;
+      const mag = isRate ? `${Math.abs(Math.round(k.delta * 100))}%` : String(Math.abs(k.delta));
+      deltaEl.textContent = `${up ? '▲' : '▼'} ${mag}`;
+      deltaEl.className = `delta small ${up ? 'up' : 'down'}`;
+    }
+    renderSpark($('.spark', art), k.spark);
+  }
+}
+renderKPIs();
+
+// ---- needs-attention signals ----
+function renderSignals() {
+  const row = $('#signals .signal-row');
+  row.innerHTML = pulse.signals.map(s => {
+    const clickable = !!s.city_id;
+    const tag = clickable ? 'button' : 'div';
+    const attr = clickable ? ` type="button" data-city="${s.city_id}"` : '';
+    return `<${tag} class="signal-card"${attr}>
+      <div class="sig-head"><span class="sev ${s.severity}"></span><span class="sig-title">${s.title}</span></div>
+      <p class="sig-why">${s.why}</p>
+      <p class="sig-action"><span class="arrow">→</span>${s.action}</p>
+    </${tag}>`;
+  }).join('');
+  $$('button.signal-card', row).forEach(b =>
+    b.addEventListener('click', () => selectCity(b.dataset.city, b)));
+}
+renderSignals();
